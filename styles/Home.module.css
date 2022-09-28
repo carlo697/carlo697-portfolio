@@ -2,3 +2,18 @@
   max-width: 1300px;
   margin: 0 auto;
 }
+
+.terrain-section-background {
+  min-height: 100vh;
+  background: rgb(10, 45, 46);
+  background: linear-gradient(
+    0deg,
+    rgba(10, 45, 46, 1) 0%,
+    rgba(181, 122, 54, 1) 100%
+  );
+}
+
+.terrain-canvas {
+  max-height: 85vh;
+  aspect-ratio: 16/10;
+}
