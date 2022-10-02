@@ -1,0 +1,27 @@
+@import "utilities";
+@import "variables";
+
+@include utility-map(
+  (
+    position: (
+      property: position,
+      values: relative absolute,
+    ),
+    top: (
+      property: top,
+      values: $positions,
+    ),
+    bottom: (
+      property: bottom,
+      values: $positions,
+    ),
+    left: (
+      property: left,
+      values: $positions,
+    ),
+    right: (
+      property: right,
+      values: $positions,
+    ),
+  )
+);

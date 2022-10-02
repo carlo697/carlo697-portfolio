@@ -1,0 +1,83 @@
+@import "variables";
+@import "utilities";
+
+@mixin space($property: padding, $key) {
+  #{$property}: map-get($spacers, $key);
+}
+
+@include utility-map(
+  (
+    "padding": (
+      class: p,
+      property: padding,
+      values: $spacers,
+    ),
+    "padding-x": (
+      class: px,
+      property: padding-left padding-right,
+      values: $spacers,
+    ),
+    "padding-y": (
+      class: py,
+      property: padding-left padding-right,
+      values: $spacers,
+    ),
+    "padding-top": (
+      class: pt,
+      property: padding-top,
+      values: $spacers,
+    ),
+    "padding-bottom": (
+      class: pb,
+      property: padding-bottom,
+      values: $spacers,
+    ),
+    "padding-left": (
+      class: pl,
+      property: padding-left,
+      values: $spacers,
+    ),
+    "padding-right": (
+      class: pr,
+      property: padding-right,
+      values: $spacers,
+    ),
+    // Margin
+    "margin":
+      (
+        class: m,
+        property: margin,
+        values: $spacers,
+      ),
+    "margin-x": (
+      class: mx,
+      property: margin-left margin-right,
+      values: $spacers,
+    ),
+    "margin-y": (
+      class: my,
+      property: margin-left margin-right,
+      values: $spacers,
+    ),
+    "margin-top": (
+      class: mt,
+      property: margin-top,
+      values: $spacers,
+    ),
+    "margin-bottom": (
+      class: mb,
+      property: margin-bottom,
+      values: $spacers,
+    ),
+    "margin-left": (
+      class: ml,
+      property: margin-left,
+      values: $spacers,
+    ),
+    "margin-right": (
+      class: mr,
+      property: margin-right,
+      values: $spacers,
+    ),
+  )
+);

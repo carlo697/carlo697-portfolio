@@ -148,6 +148,8 @@ const TerrainContent = () => {
         makeDefault
         autoRotateSpeed={-1}
         enableZoom={false}
+        enablePan={false}
+        dampingFactor={0.02}
       />
 
       {/* <GizmoHelper renderPriority={2}>

@@ -1,0 +1,111 @@
+@mixin utility-property($prefix, $suffix, $property, $value) {
+  @each $breakpoint-key, $breakpoint-value in $breakpoints {
+    @if $breakpoint-key == sm {
+      .#{$prefix}-#{$suffix} {
+        #{$property}: #{$value};
+      }
+    } @else {
+      .#{$prefix}-#{$breakpoint-key}-#{$suffix} {
+        @include breakpoint-at($breakpoint-key) {
+          #{$property}: #{$value};
+        }
+      }
+    }
+  }
+}
+
+@mixin utility-block($prefix, $suffix, $responsive: true) {
+  .#{$prefix}-#{$suffix} {
+    @content;
+  }
+
+  @if ($responsive == true) {
+    @each $breakpoint-key, $breakpoint-value in $breakpoints {
+      @if $breakpoint-key != sm {
+        .#{$prefix}-#{$breakpoint-key}-#{$suffix} {
+          @include breakpoint-at($breakpoint-key) {
+            @content;
+          }
+        }
+      }
+    }
+  }
+}
+
+@mixin set-properties($properties, $value) {
+  @each $property in $properties {
+    #{$property}: #{$value};
+  }
+}
+
+@mixin utility-map($list) {
+  @each $item-key, $item in $list {
+    // Get the class name, defaults to the map key
+    $class: if(map-has-key($item, class), map-get($item, class), $item-key);
+
+    // Get the list of properties, defaults to the map key
+    $properties: if(
+      map-has-key($item, property),
+      map-get($item, property),
+      $item-key
+    );
+
+    // Get the values, it can be a list or a map
+    $values: map-get($item, values);
+
+    // Generate breakpoint classes?
+    $responsive: if(
+      map-has-key($item, responsive),
+      map-get($item, responsive),
+      true
+    );
+
+    @if (type-of($values) == "map") {
+      @each $suffix, $value in $values {
+        .#{$class}-#{$suffix} {
+          @include set-properties($properties, $value);
+        }
+      }
+    } @else if (type-of($values) == "list") {
+      @each $value in $values {
+        .#{$class}-#{$value} {
+          @include set-properties($properties, $value);
+        }
+      }
+    }
+
+    @if ($responsive) {
+      @each $breakpoint-key, $breakpoint-value in $breakpoints {
+        @if $breakpoint-key != xs {
+          @if (type-of($values) == "map") {
+            @each $suffix, $value in $values {
+              @include breakpoint-at($breakpoint-key) {
+                .#{$class}-#{$breakpoint-key}-#{$suffix} {
+                  @include set-properties($properties, $value);
+                }
+              }
+            }
+          } @else if (type-of($values) == "list") {
+            @each $value in $values {
+              @include breakpoint-at($breakpoint-key) {
+                .#{$class}-#{$breakpoint-key}-#{$value} {
+                  @include set-properties($properties, $value);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@mixin breakpoint-at($breakpoint-key) {
+  @media (min-width: map-get($breakpoints, $breakpoint-key)) {
+    @content;
+  }
+}
+
+@include utility-block(pointer-events, none) {
+  pointer-events: none;
+}

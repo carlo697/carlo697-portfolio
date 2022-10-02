@@ -1,0 +1,119 @@
+@import "variables";
+@import "utilities";
+
+.container {
+  margin: 0 auto;
+  max-width: 100%;
+
+  padding-right: var(--gutter-x, 0.75rem);
+  padding-left: var(--gutter-x, 0.75rem);
+  margin-right: auto;
+  margin-left: auto;
+
+  @each $key, $value in $container-max-widths {
+    @if ($key != xs) {
+      @include breakpoint-at($key) {
+        max-width: $value;
+      }
+    }
+  }
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  --gutter-y: 0;
+  --gutter-x: #{map-get($grid-gutters, 1)};
+
+  margin-top: calc(-1 * var(--gutter-y));
+  margin-right: calc(-0.5 * var(--gutter-x));
+  margin-left: calc(-0.5 * var(--gutter-x));
+
+  & > * {
+    padding-right: calc(var(--gutter-x) * 0.5);
+    padding-left: calc(var(--gutter-x) * 0.5);
+    margin-top: var(--gutter-y);
+  }
+}
+
+.col {
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0;
+}
+
+@each $key, $value in $breakpoints {
+  @if $value != $xs {
+    .col-#{$key} {
+      flex-grow: 1;
+      flex-shrink: 1;
+      flex-basis: 100%;
+
+      @include breakpoint-at($key) {
+        flex-basis: 0;
+      }
+    }
+  }
+}
+
+@for $point from 1 through $grid-columns {
+  .col-#{$point} {
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: ($point / $grid-columns) * 100%;
+  }
+}
+
+@each $key, $value in $breakpoints {
+  @for $point from 1 through $grid-columns {
+    @if $value != $xs {
+      .col-#{$key}-#{$point} {
+        @include breakpoint-at($key) {
+          flex-grow: 0;
+          flex-shrink: 0;
+          flex-basis: ($point / $grid-columns) * 100%;
+        }
+      }
+    }
+  }
+}
+
+@each $gutter-key, $gutter-value in $grid-gutters {
+  .g-#{$gutter-key} {
+    --gutter-x: #{$gutter-value};
+    --gutter-y: #{$gutter-value};
+  }
+
+  .gx-#{$gutter-key} {
+    --gutter-x: #{$gutter-value};
+  }
+
+  .gy-#{$gutter-key} {
+    --gutter-y: #{$gutter-value};
+  }
+}
+
+@each $breakpoint-key, $breakpoint-value in $breakpoints {
+  @each $gutter-key, $gutter-value in $grid-gutters {
+    @if $breakpoint-value != $xs {
+      .g-#{$breakpoint-key}-#{$gutter-key} {
+        @include breakpoint-at($breakpoint-key) {
+          --gutter-x: #{$gutter-value};
+          --gutter-y: #{$gutter-value};
+        }
+      }
+
+      .gx-#{$breakpoint-key}-#{$gutter-key} {
+        @include breakpoint-at($breakpoint-key) {
+          --gutter-x: #{$gutter-value};
+        }
+      }
+
+      .gy-#{$breakpoint-key}-#{$gutter-key} {
+        @include breakpoint-at($breakpoint-key) {
+          --gutter-y: #{$gutter-value};
+        }
+      }
+    }
+  }
+}
