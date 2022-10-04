@@ -1,0 +1,11 @@
+.wrapper {
+  position: sticky;
+  top: 0;
+  transition: background-color 0.5s;
+  overflow: hidden;
+
+  &.sticked {
+    background: linear-gradient(rgba(0, 0, 0, 0.85), black);
+    backdrop-filter: blur(2px);
+  }
+}

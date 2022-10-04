@@ -1,0 +1,62 @@
+@import "../../styles/base/variables";
+@import "../../styles/base/grid";
+@value sticked from "./StickyNavbarWrapper.module.scss";
+
+.button {
+  display: block;
+  position: relative;
+  color: #b9b9b9;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+  transition: color 0.3s;
+  z-index: 1;
+
+  padding: 0.8rem 0.5rem;
+  font-size: 0.8rem;
+
+  @include breakpoint-at(sm) {
+    padding: 1.5rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  &.active,
+  &:hover {
+    color: $white;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: -50%;
+    width: 200%;
+    height: 100%;
+    background: radial-gradient(
+      circle farthest-side at 50% 0%,
+      #3c415c,
+      transparent
+    );
+    background-position: top;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+  }
+
+  &.active .line {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    top: 0;
+    left: 0;
+    background-color: white;
+  }
+}
+
+.sticked {
+  .button:hover::before,
+  .button.active::before {
+    opacity: 1;
+  }
+}

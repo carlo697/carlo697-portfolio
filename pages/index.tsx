@@ -1,6 +1,10 @@
 import classNames from "classnames";
 import type { NextPage } from "next";
 import Head from "next/head";
+import Link from "next/link";
+import StickyNavbar from "../components/navigation/StickyNavbar";
+import StickyNavbarButton from "../components/navigation/StickyNavbarButton";
+import StickyNavbarWrapper from "../components/navigation/StickyNavbarWrapper";
 import styles from "../styles/Home.module.css";
 import TerrainCanvas from "../three/terrain/TerrainCanvas";
 
@@ -13,49 +17,67 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
+      <main className={styles["blue-background"]}>
         <section className={classNames(styles["terrain-section"], "pb-5")}>
           <div className="container">
-            <div className="pb-5">
-              <div className="position-relative">
-                <div className="row pb-md-6 pb-lg-4">
-                  <div className="col-12 col-md-10">
-                    <div className={styles["terrain-canvas-parent"]}>
-                      <TerrainCanvas
-                        style={{
-                          position: "absolute",
-                          width: "100%",
-                          height: "100%",
-                        }}
-                      />
-                    </div>
-                  </div>
-                </div>
-
-                <div className="row position-md-absolute bottom-md-0 right-md-0 pointer-events-md-none">
-                  <div className="col-md-7"></div>
-                  <div className="col-12 col-md-5">
-                    <p className="text-center text-md-right font-size-4 font-weight-light">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Nullam feugiat efficitur vulputate. Vestibulum ac leo
-                      turpis. Cras lobortis ipsum ut lacinia porttitor. In eu
-                      condimentum est. Phasellus venenatis nec augue eget
-                      gravida.
-                    </p>
+            <div className="position-relative">
+              <div className="row pb-md-6 pb-lg-4">
+                <div className="col-12 col-md-10">
+                  <div className={styles["terrain-canvas-parent"]}>
+                    <TerrainCanvas
+                      style={{
+                        position: "absolute",
+                        width: "100%",
+                        height: "100%",
+                      }}
+                    />
                   </div>
                 </div>
               </div>
-            </div>
 
-            <p>Lorem Ipsum</p>
+              <div className="row position-md-absolute bottom-md-0 right-md-0 pointer-events-md-none">
+                <div className="col-md-7"></div>
+                <div className="col-12 col-md-5">
+                  <p className="text-center text-md-right font-size-4 font-weight-light">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Nullam feugiat efficitur vulputate. Vestibulum ac leo
+                    turpis. Cras lobortis ipsum ut lacinia porttitor. In eu
+                    condimentum est. Phasellus venenatis nec augue eget gravida.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
-        <section className={classNames(styles["blue-background"], "pb-5")}>
+        <StickyNavbarWrapper>
+          <div className="container">
+            <StickyNavbar>
+              <StickyNavbarButton href="#about" start="#about" end="#projects">
+                About
+              </StickyNavbarButton>
+              <StickyNavbarButton
+                href="#projects"
+                start="#projects"
+                end="#skills"
+              >
+                Projects
+              </StickyNavbarButton>
+              <StickyNavbarButton href="#skills" start="#skills" end="#contact">
+                Skills
+              </StickyNavbarButton>
+              <StickyNavbarButton href="#contact" start="#contact" end="#end">
+                Contact
+              </StickyNavbarButton>
+            </StickyNavbar>
+          </div>
+        </StickyNavbarWrapper>
+
+        <section className={classNames(styles["blue-background"], "pb-6 pt-5")}>
           <div className="container">
             <div className="row">
               <div className="col-6">
-                <h1>Lorem Ipsum</h1>
+                <h1 id="about">Lorem Ipsum</h1>
                 <h2>Lorem Ipsum</h2>
                 <h3>Lorem Ipsum</h3>
                 <h4>Lorem Ipsum</h4>
@@ -94,6 +116,139 @@ const Home: NextPage = () => {
             </div>
           </div>
         </section>
+
+        <section className={classNames(styles["blue-background"], "pb-6")}>
+          <div className="container">
+            <div className="row">
+              <div className="col-12">
+                <h1 id="projects" className="text-center mb-4">
+                  Projects
+                </h1>
+              </div>
+            </div>
+
+            <div className="row">
+              <div className="col-md-8">
+                <p className="font-size-5 pb-4">
+                  Proin orci odio, dapibus a tristique nec, consectetur eu
+                  risus. Nunc vitae elit fermentum dui volutpat dapibus. Morbi
+                  semper congue placerat. Donec sit amet leo lacus. Maecenas in
+                  est eu urna molestie aliquet. Integer id dignissim purus. Sed
+                  finibus lectus ligula, a commodo mauris molestie sed. Quisque
+                  eu tristique dolor. Aliquam sit amet facilisis nisi, vitae
+                  convallis nunc. Pellentesque pellentesque risus ullamcorper
+                  enim hendrerit iaculis. Nullam tempor bibendum sem ac
+                  eleifend. Mauris imperdiet aliquam mauris, vel fermentum
+                  mauris sollicitudin iaculis. Sed sodales a tellus id egestas.
+                  Quisque sit amet egestas arcu, nec tincidunt nibh. Fusce eu
+                  tellus nec arcu ultricies laoreet. Fusce accumsan condimentum
+                  velit, sed hendrerit justo dapibus sed.
+                </p>
+              </div>
+            </div>
+
+            <div className="row">
+              <div className="col-md-4"></div>
+              <div className="col-md-8">
+                <p className="font-size-5">
+                  Proin orci odio, dapibus a tristique nec, consectetur eu
+                  risus. Nunc vitae elit fermentum dui volutpat dapibus. Morbi
+                  semper congue placerat. Donec sit amet leo lacus. Maecenas in
+                  est eu urna molestie aliquet. Integer id dignissim purus. Sed
+                  finibus lectus ligula, a commodo mauris molestie sed. Quisque
+                  eu tristique dolor. Aliquam sit amet facilisis nisi, vitae
+                  convallis nunc. Pellentesque pellentesque risus ullamcorper
+                  enim hendrerit iaculis. Nullam tempor bibendum sem ac
+                  eleifend. Mauris imperdiet aliquam mauris, vel fermentum
+                  mauris sollicitudin iaculis. Sed sodales a tellus id egestas.
+                  Quisque sit amet egestas arcu, nec tincidunt nibh. Fusce eu
+                  tellus nec arcu ultricies laoreet. Fusce accumsan condimentum
+                  velit, sed hendrerit justo dapibus sed.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className={classNames(styles["blue-background"], "pb-6")}>
+          <div className="container">
+            <div className="row">
+              <div className="col-12">
+                <h1 id="skills" className="text-center mb-4">
+                  Skills
+                </h1>
+              </div>
+            </div>
+
+            <div className="row">
+              <div className="col">
+                <p className="font-size-5 pb-4">
+                  Proin orci odio, dapibus a tristique nec, consectetur eu
+                  risus. Nunc vitae elit fermentum dui volutpat dapibus. Morbi
+                  semper congue placerat. Donec sit amet leo lacus. Maecenas in
+                  est eu urna molestie aliquet. Integer id dignissim purus. Sed
+                  finibus lectus ligula, a commodo mauris molestie sed. Quisque
+                  eu tristique dolor. Aliquam sit amet facilisis nisi, vitae
+                  convallis nunc. Pellentesque pellentesque risus ullamcorper
+                  enim hendrerit iaculis. Nullam tempor bibendum sem ac
+                  eleifend. Mauris imperdiet aliquam mauris, vel fermentum
+                  mauris sollicitudin iaculis. Sed sodales a tellus id egestas.
+                  Quisque sit amet egestas arcu, nec tincidunt nibh. Fusce eu
+                  tellus nec arcu ultricies laoreet. Fusce accumsan condimentum
+                  velit, sed hendrerit justo dapibus sed.
+                </p>
+
+                <p className="font-size-5 pb-4">
+                  Proin orci odio, dapibus a tristique nec, consectetur eu
+                  risus. Nunc vitae elit fermentum dui volutpat dapibus. Morbi
+                  semper congue placerat. Donec sit amet leo lacus. Maecenas in
+                  est eu urna molestie aliquet.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className={classNames(styles["blue-background"], "pb-6")}>
+          <div className="container">
+            <div className="row">
+              <div className="col-12">
+                <h1 id="contact" className="text-center mb-4">
+                  Contact
+                </h1>
+              </div>
+            </div>
+
+            <div className="row">
+              <div className="col">
+                <p className="font-size-5 pb-4">
+                  Proin orci odio, dapibus a tristique nec, consectetur eu
+                  risus. Nunc vitae elit fermentum dui volutpat dapibus. Morbi
+                  semper congue placerat. Donec sit amet leo lacus. Maecenas in
+                  est eu urna molestie aliquet. Integer id dignissim purus. Sed
+                  finibus lectus ligula, a commodo mauris molestie sed. Quisque
+                  eu tristique dolor. Aliquam sit amet facilisis nisi, vitae
+                  convallis nunc. Pellentesque pellentesque risus ullamcorper
+                  enim hendrerit iaculis. Nullam tempor bibendum sem ac
+                  eleifend. Mauris imperdiet aliquam mauris, vel fermentum
+                  mauris sollicitudin iaculis. Sed sodales a tellus id egestas.
+                  Quisque sit amet egestas arcu, nec tincidunt nibh. Fusce eu
+                  tellus nec arcu ultricies laoreet. Fusce accumsan condimentum
+                  velit, sed hendrerit justo dapibus sed.
+                </p>
+
+                <p className="font-size-5 pb-4">
+                  Proin orci odio, dapibus a tristique nec, consectetur eu
+                  risus. Nunc vitae elit fermentum dui volutpat dapibus. Morbi
+                  semper congue placerat. Donec sit amet leo lacus. Maecenas in
+                  est eu urna molestie aliquet.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div id="end"></div>
       </main>
     </>
   );
