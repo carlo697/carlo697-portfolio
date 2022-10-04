@@ -5,11 +5,15 @@
 
 .terrain-section {
   color: white;
-  background: rgb(10, 45, 46);
+  background: #151515;
   background: linear-gradient(
-    0deg,
-    rgba(10, 45, 46, 1) 0%,
-    rgba(181, 122, 54, 1) 100%
+    180deg,
+    #707b95 5%,
+    #fdae4f 30%,
+    #fdae4f 40%,
+    #ef7141 50%,
+    65%,
+    #151515
   );
 }
 
@@ -22,6 +26,6 @@
 }
 
 .blue-background {
-  background: rgb(10, 45, 46);
+  background: #151515;
   color: white;
 }
