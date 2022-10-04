@@ -6,6 +6,9 @@
 @import "base/grid";
 @import "base/position";
 
+$scrollbar-track: black;
+$scrollbar-thumb: white;
+
 * {
   box-sizing: border-box;
 }
@@ -23,10 +26,23 @@
 html {
   overflow-y: scroll;
   overflow-x: hidden;
+  scroll-padding-top: 6rem;
+  scrollbar-color: $scrollbar-thumb $scrollbar-track;
+  scrollbar-width: thin;
 }
 
 canvas {
   background: transparent;
+}
+
+::-webkit-scrollbar {
+  width: 0.5rem;
+}
+::-webkit-scrollbar-track {
+  background: $scrollbar-track;
+}
+::-webkit-scrollbar-thumb {
+  background: $scrollbar-thumb;
 }
 
 @import "menu";
