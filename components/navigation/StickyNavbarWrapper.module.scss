@@ -3,6 +3,7 @@
   top: 0;
   transition: background-color 0.5s;
   overflow: hidden;
+  z-index: 1000;
 
   &.sticked {
     background: linear-gradient(rgba(0, 0, 0, 0.85), black);

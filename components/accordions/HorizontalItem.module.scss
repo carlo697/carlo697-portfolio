@@ -1,0 +1,101 @@
+@import "../../styles/base/grid";
+
+.wrapper {
+  flex-grow: 1;
+  flex-basis: 0px;
+  flex-shrink: 0;
+  background-color: rgb(0, 0, 0);
+  transition: transform 0.25s;
+  position: relative;
+  overflow: hidden;
+
+  min-height: 150px;
+  transition: flex-basis var(--transition-time),
+    flex-grow var(--transition-time), border var(--transition-time);
+
+  &.active {
+    flex-basis: var(--item-width);
+    flex-grow: 0;
+    background-color: rgb(201, 201, 201);
+  }
+
+  box-sizing: content-box;
+
+  &:not(:last-of-type) {
+    border-right: solid 2px rgba(255, 255, 255, 0.15);
+  }
+
+  // &:not(:last-of-type)::after {
+  //   content: "";
+  //   position: absolute;
+  //   height: 100%;
+  //   top: 0;
+  //   right: 0;
+  //   width: 2px;
+  //   background-color: rgba(255, 255, 255, 0.25);
+  // }
+}
+
+.padding {
+  padding: 0.5rem;
+
+  @include breakpoint-at(md) {
+    padding: 1.5rem;
+  }
+}
+
+.background {
+  width: 100%;
+  height: 100%;
+}
+
+.button {
+  width: 100%;
+  height: 100%;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  text-align: start;
+  font-size: 0.9rem;
+  display: flex;
+  -webkit-tap-highlight-color: transparent;
+
+  transition: opacity var(--transition-time);
+
+  &:not(:disabled) {
+    cursor: pointer;
+  }
+
+  @include breakpoint-at(md) {
+    font-size: 1rem;
+  }
+}
+
+.wrapper.active {
+  .button {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+.title-wrapper {
+  color: white;
+  writing-mode: vertical-lr;
+}
+
+.content-wrapper {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-time);
+  color: black;
+  position: absolute;
+  top: 0;
+  width: var(--item-width);
+}
+
+.wrapper.active {
+  .content-wrapper {
+    opacity: 1;
+    pointer-events: initial;
+  }
+}

@@ -2,6 +2,8 @@ import classNames from "classnames";
 import type { NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link";
+import HorizontalAccordion from "../components/accordions/HorizontalAccordion";
+import HorizontalItem from "../components/accordions/HorizontalItem";
 import StickyNavbar from "../components/navigation/StickyNavbar";
 import StickyNavbarButton from "../components/navigation/StickyNavbarButton";
 import StickyNavbarWrapper from "../components/navigation/StickyNavbarWrapper";
@@ -73,31 +75,21 @@ const Home: NextPage = () => {
           </div>
         </StickyNavbarWrapper>
 
-        <section className={classNames(styles["blue-background"], "pb-6 pt-5")}>
+        <div className="pb-6"></div>
+
+        <section className={classNames(styles["blue-background"], "pb-6")}>
           <div className="container">
             <div className="row">
-              <div className="col-6">
-                <h1 id="about">Lorem Ipsum</h1>
-                <h2>Lorem Ipsum</h2>
-                <h3>Lorem Ipsum</h3>
-                <h4>Lorem Ipsum</h4>
-                <h5>Lorem Ipsum</h5>
-                <h6>Lorem Ipsum</h6>
+              <div className="col-12">
+                <h1 id="about" className="text-center mb-4">
+                  About
+                </h1>
+              </div>
+            </div>
 
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Aenean elementum bibendum sem sed pretium. Ut nisl lorem,
-                  fermentum eget felis in, malesuada scelerisque dolor. Sed
-                  tincidunt justo ut nulla faucibus, ut interdum nisi ornare.
-                  Sed at mi vitae lorem tincidunt interdum. Phasellus non
-                  lacinia magna. Nulla viverra aliquam leo, et laoreet mi
-                  hendrerit quis. Maecenas tincidunt velit nec maximus semper.
-                  Aliquam sit amet feugiat magna. Integer tempor sapien sagittis
-                  nunc sodales, sit amet iaculis nisi posuere. Pellentesque
-                  tincidunt ut massa sed scelerisque.
-                </p>
-
-                <p>
+            <div className="row">
+              <div className="col">
+                <p className="font-size-5 pb-4">
                   Proin orci odio, dapibus a tristique nec, consectetur eu
                   risus. Nunc vitae elit fermentum dui volutpat dapibus. Morbi
                   semper congue placerat. Donec sit amet leo lacus. Maecenas in
@@ -112,6 +104,42 @@ const Home: NextPage = () => {
                   tellus nec arcu ultricies laoreet. Fusce accumsan condimentum
                   velit, sed hendrerit justo dapibus sed.
                 </p>
+              </div>
+
+              <div className="col-12">
+                <HorizontalAccordion>
+                  <HorizontalItem id="tab1" title="Titulo 1">
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Nunc eleifend est at sem cursus, vitae fermentum massa
+                      hendrerit.
+                    </p>
+
+                    <p>
+                      Quisque tellus leo, sodales eu sollicitudin sit amet,
+                      sollicitudin et dui. Morbi felis diam, varius id turpis
+                      vitae, accumsan scelerisque lectus. Duis fringilla ut
+                      purus quis mollis. Nunc ac scelerisque metus. Vivamus erat
+                      purus, maximus sed libero sed, vehicula tincidunt quam.
+                    </p>
+                  </HorizontalItem>
+
+                  <HorizontalItem id="tab2" title="Titulo 2">
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Nunc eleifend est at sem cursus, vitae fermentum massa
+                      hendrerit.
+                    </p>
+                  </HorizontalItem>
+
+                  <HorizontalItem id="tab3" title="Titulo 3">
+                    Hola 3
+                  </HorizontalItem>
+
+                  <HorizontalItem id="tab4" title={<>Titulo 4 - <strong>TEST</strong></>}>
+                    Hola 3
+                  </HorizontalItem>
+                </HorizontalAccordion>
               </div>
             </div>
           </div>

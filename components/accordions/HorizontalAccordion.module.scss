@@ -1,0 +1,15 @@
+@import "../../styles/base/grid";
+
+.wrapper {
+  --transition-time: 0.5s;
+  --item-width: calc(var(--width) * 0.7);
+
+  display: flex;
+  width: 100%;
+
+  transition: min-height var(--transition-time);
+
+  @include breakpoint-at(md) {
+    --item-width: calc(var(--width) * 0.75);
+  }
+}
