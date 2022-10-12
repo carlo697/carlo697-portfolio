@@ -1,6 +1,7 @@
 import classNames from "classnames";
 import type { NextPage } from "next";
 import Head from "next/head";
+import Image from "next/image";
 import Link from "next/link";
 import HorizontalAccordion from "../components/accordions/HorizontalAccordion";
 import HorizontalItem from "../components/accordions/HorizontalItem";
@@ -9,6 +10,10 @@ import StickyNavbarButton from "../components/navigation/StickyNavbarButton";
 import StickyNavbarWrapper from "../components/navigation/StickyNavbarWrapper";
 import styles from "../styles/Home.module.css";
 import TerrainCanvas from "../three/terrain/TerrainCanvas";
+import test01 from "../public/images/test-01.jpg";
+import test02 from "../public/images/test-02.jpg";
+import test03 from "../public/images/test-03.jpg";
+import test04 from "../public/images/test-04.jpg";
 
 const Home: NextPage = () => {
   return (
@@ -107,8 +112,13 @@ const Home: NextPage = () => {
               </div>
 
               <div className="col-12">
-                <HorizontalAccordion>
-                  <HorizontalItem id="tab1" title="Titulo 1">
+                <HorizontalAccordion minHeight={250}>
+                  <HorizontalItem
+                    id="tab1"
+                    title="Titulo 1"
+                    backgroundSrc={test01}
+                    backgroundPosition="center 20%"
+                  >
                     <p>
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                       Nunc eleifend est at sem cursus, vitae fermentum massa
@@ -124,7 +134,12 @@ const Home: NextPage = () => {
                     </p>
                   </HorizontalItem>
 
-                  <HorizontalItem id="tab2" title="Titulo 2">
+                  <HorizontalItem
+                    id="tab2"
+                    title="Titulo 2"
+                    backgroundSrc={test02}
+                    backgroundPosition="center 80%"
+                  >
                     <p>
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                       Nunc eleifend est at sem cursus, vitae fermentum massa
@@ -132,11 +147,25 @@ const Home: NextPage = () => {
                     </p>
                   </HorizontalItem>
 
-                  <HorizontalItem id="tab3" title="Titulo 3">
+                  <HorizontalItem
+                    id="tab3"
+                    title="Titulo 3"
+                    backgroundSrc={test03}
+                    backgroundPosition="center 80%"
+                  >
                     Hola 3
                   </HorizontalItem>
 
-                  <HorizontalItem id="tab4" title={<>Titulo 4 - <strong>TEST</strong></>}>
+                  <HorizontalItem
+                    id="tab4"
+                    title={
+                      <>
+                        Titulo 4 - <strong>TEST</strong>
+                      </>
+                    }
+                    backgroundSrc={test04}
+                    backgroundPosition="center 80%"
+                  >
                     Hola 3
                   </HorizontalItem>
                 </HorizontalAccordion>

@@ -8,13 +8,15 @@ import React, {
 } from "react";
 import styles from "./HorizontalAccordion.module.scss";
 
-type Props = {};
+type Props = {
+  minHeight?: number;
+};
 
-type AccordionState = {
+type AccordionState = Props & {
   activeTab?: string | null | undefined;
   activeHeight?: number | null | undefined;
   openTab: (id: string) => void | null;
-} & Props;
+};
 
 export const accordionContext = createContext<AccordionState>(
   {} as AccordionState
@@ -22,7 +24,10 @@ export const accordionContext = createContext<AccordionState>(
 
 const AccordionProvider = accordionContext.Provider;
 
-const HorizontalAccordion = ({ children }: React.PropsWithChildren<Props>) => {
+const HorizontalAccordion = ({
+  children,
+  minHeight = undefined,
+}: React.PropsWithChildren<Props>) => {
   const ref = useRef<HTMLDivElement>(null);
   const [activeTab, setActiveTab] = useState<string | null>(null);
   const [width, setWidth] = useState(0);
@@ -52,7 +57,7 @@ const HorizontalAccordion = ({ children }: React.PropsWithChildren<Props>) => {
   };
 
   return (
-    <AccordionProvider value={{ activeTab: activeTab, openTab }}>
+    <AccordionProvider value={{ activeTab: activeTab, openTab, minHeight }}>
       <div
         className={styles["wrapper"]}
         ref={ref}
