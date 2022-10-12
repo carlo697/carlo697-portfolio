@@ -66,12 +66,9 @@ const Home: NextPage = () => {
               <StickyNavbarButton
                 href="#projects"
                 start="#projects"
-                end="#skills"
+                end="#contact"
               >
                 Projects
-              </StickyNavbarButton>
-              <StickyNavbarButton href="#skills" start="#skills" end="#contact">
-                Skills
               </StickyNavbarButton>
               <StickyNavbarButton href="#contact" start="#contact" end="#end">
                 Contact
@@ -221,45 +218,6 @@ const Home: NextPage = () => {
                   Quisque sit amet egestas arcu, nec tincidunt nibh. Fusce eu
                   tellus nec arcu ultricies laoreet. Fusce accumsan condimentum
                   velit, sed hendrerit justo dapibus sed.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className={classNames(styles["blue-background"], "pb-6")}>
-          <div className="container">
-            <div className="row">
-              <div className="col-12">
-                <h1 id="skills" className="text-center mb-4">
-                  Skills
-                </h1>
-              </div>
-            </div>
-
-            <div className="row">
-              <div className="col">
-                <p className="font-size-5 pb-4">
-                  Proin orci odio, dapibus a tristique nec, consectetur eu
-                  risus. Nunc vitae elit fermentum dui volutpat dapibus. Morbi
-                  semper congue placerat. Donec sit amet leo lacus. Maecenas in
-                  est eu urna molestie aliquet. Integer id dignissim purus. Sed
-                  finibus lectus ligula, a commodo mauris molestie sed. Quisque
-                  eu tristique dolor. Aliquam sit amet facilisis nisi, vitae
-                  convallis nunc. Pellentesque pellentesque risus ullamcorper
-                  enim hendrerit iaculis. Nullam tempor bibendum sem ac
-                  eleifend. Mauris imperdiet aliquam mauris, vel fermentum
-                  mauris sollicitudin iaculis. Sed sodales a tellus id egestas.
-                  Quisque sit amet egestas arcu, nec tincidunt nibh. Fusce eu
-                  tellus nec arcu ultricies laoreet. Fusce accumsan condimentum
-                  velit, sed hendrerit justo dapibus sed.
-                </p>
-
-                <p className="font-size-5 pb-4">
-                  Proin orci odio, dapibus a tristique nec, consectetur eu
-                  risus. Nunc vitae elit fermentum dui volutpat dapibus. Morbi
-                  semper congue placerat. Donec sit amet leo lacus. Maecenas in
-                  est eu urna molestie aliquet.
                 </p>
               </div>
             </div>
