@@ -75,6 +75,7 @@ const HorizontalItem = ({
             alt="background"
             objectFit="cover"
             objectPosition={backgroundPosition}
+            placeholder="blur"
           />
         </div>
       )}
