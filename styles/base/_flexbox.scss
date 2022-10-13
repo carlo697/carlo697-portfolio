@@ -1,0 +1,26 @@
+@import "utilities";
+
+@include utility-map(
+  (
+    display: (
+      property: display,
+      values: block flex,
+    ),
+    justify-content: (
+      property: justify-content,
+      values: (
+        center: center,
+        start: flex-start,
+        end: flex-end,
+      ),
+    ),
+    align-items: (
+      property: align-items,
+      values: (
+        center: center,
+        start: flex-start,
+        end: flex-end,
+      ),
+    ),
+  )
+);
