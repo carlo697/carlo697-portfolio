@@ -15,10 +15,11 @@ const SimpleDivider = ({
   direction = "horizontal",
   useContainer = false,
 }: Props) => {
-  const containerClasses = classNames("container", dividerClassName);
+  const containerClasses = classNames("container", containerClassName);
   const dividirClasses = classNames(
     styles["base"],
-    direction === "horizontal" ? styles["horizontal"] : styles["vertical"]
+    direction === "horizontal" ? styles["horizontal"] : styles["vertical"],
+    dividerClassName
   );
 
   const content = <div className={dividirClasses}></div>;
