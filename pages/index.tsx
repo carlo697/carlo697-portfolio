@@ -1,19 +1,23 @@
 import classNames from "classnames";
 import type { NextPage } from "next";
 import Head from "next/head";
-import Image from "next/image";
-import Link from "next/link";
 import HorizontalAccordion from "../components/accordions/HorizontalAccordion";
 import HorizontalItem from "../components/accordions/HorizontalItem";
 import StickyNavbar from "../components/navigation/StickyNavbar";
 import StickyNavbarButton from "../components/navigation/StickyNavbarButton";
 import StickyNavbarWrapper from "../components/navigation/StickyNavbarWrapper";
-import styles from "../styles/Home.module.css";
+import styles from "../styles/Home.module.scss";
 import TerrainCanvas from "../three/terrain/TerrainCanvas";
 import test01 from "../public/images/test-01.jpg";
 import test02 from "../public/images/test-02.jpg";
 import test03 from "../public/images/test-03.jpg";
 import test04 from "../public/images/test-04.jpg";
+import SimpleDivider from "../components/separators/SimpleDivider";
+import { GoMailRead } from "react-icons/go";
+import { FaLinkedin } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
+import ListGroup from "../components/cards/ListGroup";
+import ListGroupItem from "../components/cards/ListGroupItem";
 
 const Home: NextPage = () => {
   return (
@@ -77,9 +81,9 @@ const Home: NextPage = () => {
           </div>
         </StickyNavbarWrapper>
 
-        <div className="pb-6"></div>
+        <SimpleDivider useContainer />
 
-        <section className={classNames(styles["blue-background"], "pb-6")}>
+        <section className={classNames(styles["blue-background"], "pt-6 pb-6")}>
           <div className="container">
             <div className="row">
               <div className="col-12">
@@ -171,7 +175,9 @@ const Home: NextPage = () => {
           </div>
         </section>
 
-        <section className={classNames(styles["blue-background"], "pb-6")}>
+        <SimpleDivider useContainer />
+
+        <section className={classNames(styles["blue-background"], "pt-6 pb-6")}>
           <div className="container">
             <div className="row">
               <div className="col-12">
@@ -224,40 +230,54 @@ const Home: NextPage = () => {
           </div>
         </section>
 
-        <section className={classNames(styles["blue-background"], "pb-6")}>
+        <SimpleDivider useContainer />
+
+        <section
+          className={classNames(styles["blue-background"], "pt-6 pb-7")}
+          id="contact"
+        >
           <div className="container">
             <div className="row">
-              <div className="col-12">
-                <h1 id="contact" className="text-center mb-4">
-                  Contact
-                </h1>
+              <div className="col-md-4 display-flex align-items-center">
+                <div className="pt-md-4 pb-4 pr-md-3">
+                  <h1 className="mb-3">Contact Me</h1>
+
+                  <p className="font-size-5">
+                    Proin orci odio, dapibus a tristique nec, consectetur eu
+                    risus. Nunc vitae elit fermentum dui volutpat dapibus. Morbi
+                    semper congue placerat.
+                  </p>
+                </div>
               </div>
-            </div>
-
-            <div className="row">
+              <div className="col-md-1 display-flex justify-content-center">
+                {/* <SimpleDivider direction="vertical" /> */}
+              </div>
               <div className="col">
-                <p className="font-size-5 pb-4">
-                  Proin orci odio, dapibus a tristique nec, consectetur eu
-                  risus. Nunc vitae elit fermentum dui volutpat dapibus. Morbi
-                  semper congue placerat. Donec sit amet leo lacus. Maecenas in
-                  est eu urna molestie aliquet. Integer id dignissim purus. Sed
-                  finibus lectus ligula, a commodo mauris molestie sed. Quisque
-                  eu tristique dolor. Aliquam sit amet facilisis nisi, vitae
-                  convallis nunc. Pellentesque pellentesque risus ullamcorper
-                  enim hendrerit iaculis. Nullam tempor bibendum sem ac
-                  eleifend. Mauris imperdiet aliquam mauris, vel fermentum
-                  mauris sollicitudin iaculis. Sed sodales a tellus id egestas.
-                  Quisque sit amet egestas arcu, nec tincidunt nibh. Fusce eu
-                  tellus nec arcu ultricies laoreet. Fusce accumsan condimentum
-                  velit, sed hendrerit justo dapibus sed.
-                </p>
-
-                <p className="font-size-5 pb-4">
-                  Proin orci odio, dapibus a tristique nec, consectetur eu
-                  risus. Nunc vitae elit fermentum dui volutpat dapibus. Morbi
-                  semper congue placerat. Donec sit amet leo lacus. Maecenas in
-                  est eu urna molestie aliquet.
-                </p>
+                <ListGroup>
+                  <ListGroupItem className={styles["contact-list-item"]}>
+                    <GoMailRead />
+                    <div>
+                      <h3>Mail</h3>
+                      <a href="mailto:test@gmail.com">test@gmail.com</a>
+                    </div>
+                  </ListGroupItem>
+                  <ListGroupItem className={styles["contact-list-item"]}>
+                    <FaLinkedin />
+                    <div>
+                      <h3>Linkedin</h3>
+                      <a href="https://www.linkedin.com/in/carlo697/">
+                        Carlos Peña
+                      </a>
+                    </div>
+                  </ListGroupItem>
+                  <ListGroupItem className={styles["contact-list-item"]}>
+                    <FaGithub />
+                    <div>
+                      <h3>Github</h3>
+                      <a href="https://github.com/carlo697">carlo697</a>
+                    </div>
+                  </ListGroupItem>
+                </ListGroup>
               </div>
             </div>
           </div>

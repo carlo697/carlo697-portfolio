@@ -1,3 +1,5 @@
+@import "base/variables";
+
 .container {
   max-width: 1300px;
   margin: 0 auto;
@@ -28,4 +30,41 @@
 .blue-background {
   background: #151515;
   color: white;
+}
+
+.contact-list-item {
+  display: flex;
+  align-items: center;
+
+  svg {
+    font-size: 2rem;
+    margin-right: 2rem;
+  }
+
+  h3 {
+    margin-bottom: 0;
+    font-size: 1.5em;
+    font-weight: $font-weight-medium;
+  }
+
+  a {
+    color: white;
+    display: block;
+    padding-top: 0.5rem;
+    padding-bottom: 0.1rem;
+    text-decoration: none;
+    position: relative;
+    width: fit-content;
+    font-weight: $font-weight-light;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 1px;
+      bottom: 0;
+      left: 0;
+      background-color: white;
+    }
+  }
 }
