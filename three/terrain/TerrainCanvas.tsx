@@ -1,13 +1,15 @@
-import { Canvas, Props } from "@react-three/fiber";
+import { Canvas } from "@react-three/fiber";
 import React from "react";
 import { NoToneMapping } from "three";
 import TerrainContent from "./TerrainContent";
 import { terrainTotalSize } from "./terrainConstants";
 import { PerformanceMonitor } from "@react-three/drei";
+import { useInView } from "react-intersection-observer";
 
-const TerrainCanvas = (
-  props: React.HTMLAttributes<HTMLDivElement>
-) => {
+const TerrainCanvas = (props: React.HTMLAttributes<HTMLDivElement>) => {
+  const { ref, inView } = useInView();
+  const frameloop = inView ? "demand" : "never";
+
   return (
     <Canvas
       camera={{
@@ -18,8 +20,9 @@ const TerrainCanvas = (
       }}
       shadows
       gl={{ antialias: false, toneMapping: NoToneMapping }}
-      frameloop="demand"
+      frameloop={frameloop}
       {...props}
+      ref={ref}
     >
       <PerformanceMonitor>
         <TerrainContent />

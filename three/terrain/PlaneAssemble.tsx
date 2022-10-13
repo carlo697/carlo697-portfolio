@@ -1,6 +1,6 @@
 import { useFrame } from "@react-three/fiber";
 import React, { RefObject, useMemo, useRef } from "react";
-import { Clock, InstancedMesh, MathUtils, Object3D, Vector3 } from "three";
+import { InstancedMesh, MathUtils, Object3D, Vector3 } from "three";
 import { TerrainChunkProps } from "./TerrainChunkProps";
 import {
   assembleTimeDiff,
@@ -17,14 +17,17 @@ const PlaneAssemble = ({
 }: TerrainChunkProps) => {
   const temp = useMemo<Object3D>(() => new Object3D(), []);
   const ref = useRef() as RefObject<InstancedMesh>;
-  const clock = React.useRef<Clock>(new Clock());
+  const clock = React.useRef<number>(0);
   const cellSize = size / assembleResolution;
   const cellOffset = -cellSize / 2;
   const cornerPosition = new Vector3(-cellOffset, 0, cellOffset);
 
-  useFrame(() => {
+  useFrame((_, delta) => {
     if (ref.current) {
-      const time = clock.current.getElapsedTime();
+      if (delta < 1) {
+        clock.current += delta;
+      }
+      const time = clock.current;
 
       // Set positions
       let index = 0;

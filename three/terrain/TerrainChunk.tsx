@@ -1,6 +1,6 @@
 import { useFrame } from "@react-three/fiber";
 import React, { useState } from "react";
-import { Clock, Vector3 } from "three";
+import { Vector3 } from "three";
 import FinalTerrain from "./FinalTerrain";
 import PlaneAssemble from "./PlaneAssemble";
 import { TerrainChunkProps } from "./TerrainChunkProps";
@@ -12,12 +12,14 @@ const TerrainChunk = ({
   timeOffset = 0,
 }: TerrainChunkProps) => {
   const [stage, setStage] = useState(0);
-  const clock = React.useRef<Clock>(new Clock());
+  const clock = React.useRef<number>(0);
 
-  useFrame(() => {
-    const time = clock.current.getElapsedTime();
+  useFrame((_, delta) => {
+    if (delta < 1) {
+      clock.current += delta;
+    }
 
-    if (time > finalTerrainTime + timeOffset && stage === 0) {
+    if (clock.current > finalTerrainTime + timeOffset && stage === 0) {
       setStage(1);
     }
   });
