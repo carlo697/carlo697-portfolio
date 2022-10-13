@@ -1,0 +1,54 @@
+@import "../../styles/base/grid";
+
+$background-color: rgb(26, 26, 26);
+$background-hover-color: rgb(37, 37, 37);
+$border-color: rgb(46, 46, 46);
+$highlight-color: rgb(60, 65, 92);
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  background-color: $background-color;
+}
+
+.item {
+  flex-grow: 1;
+  padding: 1.5rem 2rem;
+  font-size: 1.1rem;
+  font-weight: $font-weight-light;
+  transition: background-color 0.2s;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+
+  &:not(:last-of-type) {
+    border-bottom: 1px solid $border-color;
+  }
+
+  &:hover {
+    background-color: $background-hover-color;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: -10%;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(
+      circle farthest-side at 0% 0%,
+      $highlight-color,
+      transparent
+    );
+    background-position: top;
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  &:hover::before {
+    opacity: 1;
+  }
+}
