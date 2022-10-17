@@ -242,7 +242,7 @@ const Home: NextPage = () => {
                 <div className="pt-md-4 pb-4 pr-md-3">
                   <h1 className="mb-3">Contact Me</h1>
 
-                  <p className="font-size-5">
+                  <p className="font-size-5 color-light-gray">
                     Proin orci odio, dapibus a tristique nec, consectetur eu
                     risus. Nunc vitae elit fermentum dui volutpat dapibus. Morbi
                     semper congue placerat.

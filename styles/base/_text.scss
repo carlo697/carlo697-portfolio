@@ -57,5 +57,14 @@ h6 {
       ),
       responsive: false,
     ),
+    "color": (
+      property: color,
+      values: (
+        white: $white,
+        black: $black,
+        light-gray: $light-gray,
+      ),
+      responsive: false,
+    ),
   )
 );
