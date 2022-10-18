@@ -18,6 +18,7 @@ import { FaLinkedin } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import ListGroup from "../components/cards/ListGroup";
 import ListGroupItem from "../components/cards/ListGroupItem";
+import Image from "next/image";
 
 const Home: NextPage = () => {
   return (
@@ -177,19 +178,30 @@ const Home: NextPage = () => {
 
         <SimpleDivider useContainer />
 
-        <section className={classNames(styles["blue-background"], "pt-6 pb-6")}>
+        <section className={classNames(styles["blue-background"], "pt-6")}>
           <div className="container">
             <div className="row">
               <div className="col-12">
-                <h1 id="projects" className="text-center mb-4">
+                <h1 id="projects" className="text-center mb-5">
                   Projects
                 </h1>
               </div>
             </div>
 
-            <div className="row">
-              <div className="col-md-8">
-                <p className="font-size-5 pb-4">
+            <div className="row pb-6 gx-md-2">
+              <div className="col-md-5 pb-3">
+                <h2 className="text-md-right font-size-3">
+                  This is the title of a project
+                </h2>
+                <Image src={test01} alt="project 1" />
+              </div>
+
+              <div className="col-md-1 display-flex justify-content-center">
+                <SimpleDivider direction="vertical" />
+              </div>
+
+              <div className="col-md-6">
+                <p className="font-size-5">
                   Proin orci odio, dapibus a tristique nec, consectetur eu
                   risus. Nunc vitae elit fermentum dui volutpat dapibus. Morbi
                   semper congue placerat. Donec sit amet leo lacus. Maecenas in
@@ -207,9 +219,48 @@ const Home: NextPage = () => {
               </div>
             </div>
 
-            <div className="row">
-              <div className="col-md-4"></div>
-              <div className="col-md-8">
+            <div className="row pb-6 gx-md-4 direction-md-row-reverse">
+              <div className="col-md-5 pb-3">
+                <h2 className="text-md-left">This is the title of a project</h2>
+                <Image src={test02} alt="project 1" />
+              </div>
+
+              <div className="col-md-1 display-flex justify-content-center">
+                <SimpleDivider direction="vertical" />
+              </div>
+
+              <div className="col-md-6">
+                <p className="font-size-5">
+                  Proin orci odio, dapibus a tristique nec, consectetur eu
+                  risus. Nunc vitae elit fermentum dui volutpat dapibus. Morbi
+                  semper congue placerat. Donec sit amet leo lacus. Maecenas in
+                  est eu urna molestie aliquet. Integer id dignissim purus. Sed
+                  finibus lectus ligula, a commodo mauris molestie sed. Quisque
+                  eu tristique dolor. Aliquam sit amet facilisis nisi, vitae
+                  convallis nunc. Pellentesque pellentesque risus ullamcorper
+                  enim hendrerit iaculis. Nullam tempor bibendum sem ac
+                  eleifend. Mauris imperdiet aliquam mauris, vel fermentum
+                  mauris sollicitudin iaculis. Sed sodales a tellus id egestas.
+                  Quisque sit amet egestas arcu, nec tincidunt nibh. Fusce eu
+                  tellus nec arcu ultricies laoreet. Fusce accumsan condimentum
+                  velit, sed hendrerit justo dapibus sed.
+                </p>
+              </div>
+            </div>
+
+            <div className="row pb-6 gx-md-5">
+              <div className="col-md-5 pb-3">
+                <h2 className="text-md-right">
+                  This is the title of a project
+                </h2>
+                <Image src={test03} alt="project 1" />
+              </div>
+
+              <div className="col-md-1 display-flex justify-content-center">
+                <SimpleDivider direction="vertical" />
+              </div>
+
+              <div className="col-md-6">
                 <p className="font-size-5">
                   Proin orci odio, dapibus a tristique nec, consectetur eu
                   risus. Nunc vitae elit fermentum dui volutpat dapibus. Morbi
