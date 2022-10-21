@@ -221,7 +221,9 @@ const Home: NextPage = () => {
 
             <div className="row pb-6 gx-md-4 direction-md-row-reverse">
               <div className="col-md-5 pb-3">
-                <h2 className="text-md-left">This is the title of a project</h2>
+                <h2 className="text-md-left font-size-3">
+                  This is the title of a project
+                </h2>
                 <Image src={test02} alt="project 1" />
               </div>
 
@@ -250,7 +252,7 @@ const Home: NextPage = () => {
 
             <div className="row pb-6 gx-md-5">
               <div className="col-md-5 pb-3">
-                <h2 className="text-md-right">
+                <h2 className="text-md-right font-size-3">
                   This is the title of a project
                 </h2>
                 <Image src={test03} alt="project 1" />
