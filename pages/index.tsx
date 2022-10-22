@@ -20,7 +20,7 @@ import { FaGithub } from "react-icons/fa";
 import ListGroup from "../components/cards/ListGroup";
 import ListGroupItem from "../components/cards/ListGroupItem";
 import ProjectSection from "../components/projects/ProjectSection";
-import ParallaxDiv from "../components/parallax/ParallaxDiv";
+import ParallaxDiv from "../components/animations/ParallaxDiv";
 
 const Home: NextPage = () => {
   return (

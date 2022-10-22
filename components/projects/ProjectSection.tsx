@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import Image, { StaticImageData } from "next/image";
 import React, { ReactNode } from "react";
-import ParallaxDiv from "../parallax/ParallaxDiv";
+import ParallaxDiv from "../animations/ParallaxDiv";
 import SimpleDivider from "../separators/SimpleDivider";
 import styles from "./ProjectSection.module.scss";
 
