@@ -20,6 +20,7 @@ import { FaGithub } from "react-icons/fa";
 import ListGroup from "../components/cards/ListGroup";
 import ListGroupItem from "../components/cards/ListGroupItem";
 import ProjectSection from "../components/projects/ProjectSection";
+import ParallaxDiv from "../components/parallax/ParallaxDiv";
 
 const Home: NextPage = () => {
   return (
@@ -32,35 +33,38 @@ const Home: NextPage = () => {
 
       <main className={styles["blue-background"]}>
         <section className={classNames(styles["terrain-section"], "pb-5")}>
-          <div className="container">
-            <div className="position-relative">
-              <div className="row pb-md-6 pb-lg-4">
-                <div className="col-12 col-md-10">
-                  <div className={styles["terrain-canvas-parent"]}>
-                    <TerrainCanvas
-                      style={{
-                        position: "absolute",
-                        width: "100%",
-                        height: "100%",
-                      }}
-                    />
+          <ParallaxDiv endPosition={1} windowEndPosition={0}>
+            <div className="container">
+              <div className="position-relative">
+                <div className="row pb-md-6 pb-lg-4">
+                  <div className="col-12 col-md-10">
+                    <div className={styles["terrain-canvas-parent"]}>
+                      <TerrainCanvas
+                        style={{
+                          position: "absolute",
+                          width: "100%",
+                          height: "100%",
+                        }}
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div className="row position-md-absolute bottom-md-0 right-md-0 pointer-events-md-none">
+                  <div className="col-md-7"></div>
+                  <div className="col-12 col-md-5">
+                    <p className="text-center text-md-right font-size-4 font-weight-light">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Nullam feugiat efficitur vulputate. Vestibulum ac leo
+                      turpis. Cras lobortis ipsum ut lacinia porttitor. In eu
+                      condimentum est. Phasellus venenatis nec augue eget
+                      gravida.
+                    </p>
                   </div>
                 </div>
               </div>
-
-              <div className="row position-md-absolute bottom-md-0 right-md-0 pointer-events-md-none">
-                <div className="col-md-7"></div>
-                <div className="col-12 col-md-5">
-                  <p className="text-center text-md-right font-size-4 font-weight-light">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Nullam feugiat efficitur vulputate. Vestibulum ac leo
-                    turpis. Cras lobortis ipsum ut lacinia porttitor. In eu
-                    condimentum est. Phasellus venenatis nec augue eget gravida.
-                  </p>
-                </div>
-              </div>
             </div>
-          </div>
+          </ParallaxDiv>
         </section>
 
         <StickyNavbarWrapper>
