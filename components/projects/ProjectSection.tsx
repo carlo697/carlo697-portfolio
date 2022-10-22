@@ -29,19 +29,23 @@ const ProjectSection = ({
       {invert && <div className={classNames("col-md-1")}></div>}
 
       <div className={classNames("col-md-5 pb-3")}>
-        <ParallaxDiv className={styles["parallax"]}>
-          <h2
-            className={classNames(
-              "font-size-3",
-              invert ? "text-md-left" : "text-md-right"
-            )}
-          >
-            {title}
-          </h2>
+        <ParallaxDiv>
+          <div className={styles["parallax"]}>
+            <h2
+              className={classNames(
+                "font-size-3",
+                invert ? "text-md-left" : "text-md-right"
+              )}
+            >
+              {title}
+            </h2>
+          </div>
         </ParallaxDiv>
 
-        <ParallaxDiv className={styles["parallax"]}>
-          <Image src={imageSrc} alt={imageAlt} />
+        <ParallaxDiv>
+          <div className={styles["parallax"]}>
+            <Image src={imageSrc} alt={imageAlt} />
+          </div>
         </ParallaxDiv>
       </div>
 
@@ -50,7 +54,9 @@ const ProjectSection = ({
       </div>
 
       <div className={classNames("col-md-5")}>
-        <ParallaxDiv className={styles["parallax"]}>{children}</ParallaxDiv>
+        <ParallaxDiv>
+          <div className={styles["parallax"]}>{children}</div>{" "}
+        </ParallaxDiv>
       </div>
     </div>
   );
