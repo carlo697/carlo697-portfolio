@@ -12,13 +12,14 @@ import test01 from "../public/images/test-01.jpg";
 import test02 from "../public/images/test-02.jpg";
 import test03 from "../public/images/test-03.jpg";
 import test04 from "../public/images/test-04.jpg";
+import test05 from "../public/images/test-05.jpg";
 import SimpleDivider from "../components/separators/SimpleDivider";
 import { GoMailRead } from "react-icons/go";
 import { FaLinkedin } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import ListGroup from "../components/cards/ListGroup";
 import ListGroupItem from "../components/cards/ListGroupItem";
-import Image from "next/image";
+import ProjectSection from "../components/projects/ProjectSection";
 
 const Home: NextPage = () => {
   return (
@@ -188,98 +189,80 @@ const Home: NextPage = () => {
               </div>
             </div>
 
-            <div className="row pb-6 gx-md-2">
-              <div className="col-md-5 pb-3">
-                <h2 className="text-md-right font-size-3">
-                  This is the title of a project
-                </h2>
-                <Image src={test01} alt="project 1" />
-              </div>
+            <ProjectSection
+              title="This is the title of a project"
+              imageSrc={test05}
+              imageAlt="project 1"
+            >
+              <p className="font-size-5">
+                Proin orci odio, dapibus a tristique nec, consectetur eu risus.
+                Nunc vitae elit fermentum dui volutpat dapibus. Morbi semper
+                congue placerat. Donec sit amet leo lacus. Maecenas in est eu
+                urna molestie aliquet. Integer id dignissim purus. Sed finibus
+                lectus ligula, a commodo mauris molestie sed. Quisque eu
+                tristique dolor. Aliquam sit amet facilisis nisi, vitae
+                convallis nunc. Pellentesque pellentesque risus ullamcorper enim
+                hendrerit iaculis. Nullam tempor bibendum sem ac eleifend.
+                Mauris imperdiet aliquam mauris, vel fermentum mauris
+                sollicitudin iaculis. Sed sodales a tellus id egestas. Quisque
+                sit amet egestas arcu, nec tincidunt nibh. Fusce eu tellus nec
+                arcu ultricies laoreet. Fusce accumsan condimentum velit, sed
+                hendrerit justo dapibus sed.
+              </p>
+            </ProjectSection>
 
-              <div className="col-md-1 display-flex justify-content-center">
-                <SimpleDivider direction="vertical" />
-              </div>
+            <ProjectSection
+              title="This is the title of a project"
+              imageSrc={test02}
+              imageAlt="project 2"
+              invert={true}
+            >
+              <p className="font-size-5">
+                Proin orci odio, dapibus a tristique nec, consectetur eu risus.
+                Nunc vitae elit fermentum dui volutpat dapibus. Morbi semper
+                congue placerat. Donec sit amet leo lacus. Maecenas in est eu
+                urna molestie aliquet. Integer id dignissim purus. Sed finibus
+                lectus ligula, a commodo mauris molestie sed. Quisque eu
+                tristique dolor. Aliquam sit amet facilisis nisi, vitae
+                convallis nunc. Pellentesque pellentesque risus ullamcorper enim
+                hendrerit iaculis. Nullam tempor bibendum sem ac eleifend.
+                Mauris imperdiet aliquam mauris, vel fermentum mauris
+                sollicitudin iaculis. Sed sodales a tellus id egestas. Quisque
+                sit amet egestas arcu, nec tincidunt nibh. Fusce eu tellus nec
+                arcu ultricies laoreet. Fusce accumsan condimentum velit, sed
+                hendrerit justo dapibus sed.
+              </p>
+            </ProjectSection>
 
-              <div className="col-md-6">
-                <p className="font-size-5">
-                  Proin orci odio, dapibus a tristique nec, consectetur eu
-                  risus. Nunc vitae elit fermentum dui volutpat dapibus. Morbi
-                  semper congue placerat. Donec sit amet leo lacus. Maecenas in
-                  est eu urna molestie aliquet. Integer id dignissim purus. Sed
-                  finibus lectus ligula, a commodo mauris molestie sed. Quisque
-                  eu tristique dolor. Aliquam sit amet facilisis nisi, vitae
-                  convallis nunc. Pellentesque pellentesque risus ullamcorper
-                  enim hendrerit iaculis. Nullam tempor bibendum sem ac
-                  eleifend. Mauris imperdiet aliquam mauris, vel fermentum
-                  mauris sollicitudin iaculis. Sed sodales a tellus id egestas.
-                  Quisque sit amet egestas arcu, nec tincidunt nibh. Fusce eu
-                  tellus nec arcu ultricies laoreet. Fusce accumsan condimentum
-                  velit, sed hendrerit justo dapibus sed.
-                </p>
-              </div>
-            </div>
+            <ProjectSection
+              title="This is the title of a project"
+              imageSrc={test03}
+              imageAlt="project 3"
+            >
+              <p className="font-size-5">
+                Proin orci odio, dapibus a tristique nec, consectetur eu risus.
+                Nunc vitae elit fermentum dui volutpat dapibus. Morbi semper
+                congue placerat. Donec sit amet leo lacus. Maecenas in est eu
+                urna molestie aliquet. Integer id dignissim purus. Sed finibus
+                lectus ligula, a commodo mauris molestie sed. Quisque eu
+                tristique dolor. Aliquam sit amet facilisis nisi, vitae
+                convallis nunc. Pellentesque pellentesque risus ullamcorper enim
+                hendrerit iaculis. Nullam tempor bibendum sem ac eleifend.
+                Mauris imperdiet aliquam mauris, vel fermentum mauris
+                sollicitudin iaculis. Sed sodales a tellus id egestas. Quisque
+                sit amet egestas arcu, nec tincidunt nibh. Fusce eu tellus nec
+                arcu ultricies laoreet. Fusce accumsan condimentum velit, sed
+                hendrerit justo dapibus sed.
+              </p>
 
-            <div className="row pb-6 gx-md-4 direction-md-row-reverse">
-              <div className="col-md-5 pb-3">
-                <h2 className="text-md-left font-size-3">
-                  This is the title of a project
-                </h2>
-                <Image src={test02} alt="project 1" />
-              </div>
-
-              <div className="col-md-1 display-flex justify-content-center">
-                <SimpleDivider direction="vertical" />
-              </div>
-
-              <div className="col-md-6">
-                <p className="font-size-5">
-                  Proin orci odio, dapibus a tristique nec, consectetur eu
-                  risus. Nunc vitae elit fermentum dui volutpat dapibus. Morbi
-                  semper congue placerat. Donec sit amet leo lacus. Maecenas in
-                  est eu urna molestie aliquet. Integer id dignissim purus. Sed
-                  finibus lectus ligula, a commodo mauris molestie sed. Quisque
-                  eu tristique dolor. Aliquam sit amet facilisis nisi, vitae
-                  convallis nunc. Pellentesque pellentesque risus ullamcorper
-                  enim hendrerit iaculis. Nullam tempor bibendum sem ac
-                  eleifend. Mauris imperdiet aliquam mauris, vel fermentum
-                  mauris sollicitudin iaculis. Sed sodales a tellus id egestas.
-                  Quisque sit amet egestas arcu, nec tincidunt nibh. Fusce eu
-                  tellus nec arcu ultricies laoreet. Fusce accumsan condimentum
-                  velit, sed hendrerit justo dapibus sed.
-                </p>
-              </div>
-            </div>
-
-            <div className="row pb-6 gx-md-5">
-              <div className="col-md-5 pb-3">
-                <h2 className="text-md-right font-size-3">
-                  This is the title of a project
-                </h2>
-                <Image src={test03} alt="project 1" />
-              </div>
-
-              <div className="col-md-1 display-flex justify-content-center">
-                <SimpleDivider direction="vertical" />
-              </div>
-
-              <div className="col-md-6">
-                <p className="font-size-5">
-                  Proin orci odio, dapibus a tristique nec, consectetur eu
-                  risus. Nunc vitae elit fermentum dui volutpat dapibus. Morbi
-                  semper congue placerat. Donec sit amet leo lacus. Maecenas in
-                  est eu urna molestie aliquet. Integer id dignissim purus. Sed
-                  finibus lectus ligula, a commodo mauris molestie sed. Quisque
-                  eu tristique dolor. Aliquam sit amet facilisis nisi, vitae
-                  convallis nunc. Pellentesque pellentesque risus ullamcorper
-                  enim hendrerit iaculis. Nullam tempor bibendum sem ac
-                  eleifend. Mauris imperdiet aliquam mauris, vel fermentum
-                  mauris sollicitudin iaculis. Sed sodales a tellus id egestas.
-                  Quisque sit amet egestas arcu, nec tincidunt nibh. Fusce eu
-                  tellus nec arcu ultricies laoreet. Fusce accumsan condimentum
-                  velit, sed hendrerit justo dapibus sed.
-                </p>
-              </div>
-            </div>
+              <p className="font-size-5">
+                Nullam tempor bibendum sem ac eleifend. Mauris imperdiet aliquam
+                mauris, vel fermentum mauris sollicitudin iaculis. Sed sodales a
+                tellus id egestas. Quisque sit amet egestas arcu, nec tincidunt
+                nibh. Fusce eu tellus nec arcu ultricies laoreet. Fusce accumsan
+                condimentum velit, sed hendrerit justo dapibus sed.
+              </p>
+            </ProjectSection>
           </div>
         </section>
 
