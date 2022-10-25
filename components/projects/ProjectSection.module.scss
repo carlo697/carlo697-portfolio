@@ -2,6 +2,6 @@ $amount: 100px;
 
 .parallax {
   position: relative;
-  top: calc(var(--half-inverted-parallax) * $amount);
-  opacity: var(--half-parallax);
+  top: calc(var(--inverted-parallax) * $amount);
+  opacity: var(--parallax);
 }

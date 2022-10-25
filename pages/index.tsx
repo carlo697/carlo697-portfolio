@@ -33,7 +33,7 @@ const Home: NextPage = () => {
 
       <main className={styles["blue-background"]}>
         <section className={classNames(styles["terrain-section"], "pb-5")}>
-          <ParallaxDiv endPosition={1} windowEndPosition={0}>
+          <ParallaxDiv startPosition={0} viewportStart={0} viewportEnd={0}>
             <div className="container">
               <div className="position-relative">
                 <div className="row pb-md-6 pb-lg-4">

@@ -25,6 +25,10 @@
   bottom: calc(var(--parallax) * 150px);
 }
 
+.terrain-section :global(.row.position-md-absolute) {
+  bottom: calc(var(--half-parallax) * 150px);
+}
+
 .terrain-canvas-parent {
   width: 100%;
   max-height: 85vh;

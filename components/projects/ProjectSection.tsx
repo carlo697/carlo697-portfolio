@@ -1,7 +1,10 @@
 import classNames from "classnames";
 import Image, { StaticImageData } from "next/image";
 import React, { ReactNode } from "react";
-import ParallaxDiv from "../animations/ParallaxDiv";
+import ParallaxDiv, {
+  easeOutSine,
+  ParallaxDivProps,
+} from "../animations/ParallaxDiv";
 import SimpleDivider from "../separators/SimpleDivider";
 import styles from "./ProjectSection.module.scss";
 
@@ -19,6 +22,13 @@ const ProjectSection = ({
   imageAlt,
   invert,
 }: React.PropsWithChildren<Props>) => {
+  const parallaxOptions: ParallaxDivProps = {
+    endPosition: 0,
+    viewportStart: 1,
+    viewportEnd: 0.5,
+    func: easeOutSine,
+  };
+
   return (
     <div
       className={classNames(
@@ -29,7 +39,7 @@ const ProjectSection = ({
       {invert && <div className={classNames("col-md-1")}></div>}
 
       <div className={classNames("col-md-5 pb-3")}>
-        <ParallaxDiv>
+        <ParallaxDiv {...parallaxOptions}>
           <div className={styles["parallax"]}>
             <h2
               className={classNames(
@@ -42,7 +52,7 @@ const ProjectSection = ({
           </div>
         </ParallaxDiv>
 
-        <ParallaxDiv>
+        <ParallaxDiv {...parallaxOptions}>
           <div className={styles["parallax"]}>
             <Image src={imageSrc} alt={imageAlt} />
           </div>
@@ -54,8 +64,8 @@ const ProjectSection = ({
       </div>
 
       <div className={classNames("col-md-5")}>
-        <ParallaxDiv>
-          <div className={styles["parallax"]}>{children}</div>{" "}
+        <ParallaxDiv {...parallaxOptions}>
+          <div className={styles["parallax"]}>{children}</div>
         </ParallaxDiv>
       </div>
     </div>
