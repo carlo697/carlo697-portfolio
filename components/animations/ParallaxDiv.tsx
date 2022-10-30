@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import React, {
   CSSProperties,
   useCallback,
@@ -31,6 +32,9 @@ export type ParallaxDivProps = React.HTMLAttributes<HTMLDivElement> & {
   viewportEnd?: number;
   defaultPosition?: number;
   func?: (x: number) => number;
+  useInternalDiv?: boolean;
+  startClassname?: string;
+  endClassname?: string;
 };
 
 const ParallaxDiv = ({
@@ -42,6 +46,10 @@ const ParallaxDiv = ({
   viewportEnd = 0,
   defaultPosition = 0,
   func = undefined,
+  useInternalDiv = false,
+  className = "",
+  startClassname = "",
+  endClassname = "",
   ...rest
 }: React.PropsWithChildren<ParallaxDivProps>) => {
   const ref = useRef<HTMLDivElement>(null);
@@ -57,8 +65,9 @@ const ParallaxDiv = ({
       const windowHeight = window.innerHeight;
       const windowTop = window.scrollY;
 
-      const divHeight = ref.current.offsetHeight;
-      const divTop = ref.current.offsetTop;
+      const divRect = ref.current.getBoundingClientRect()
+      const divHeight = divRect.height;
+      const divTop = divRect.top + windowTop;
       const pivotStart = divTop + divHeight * startPosition;
       const pivotEnd = divTop + divHeight * endPosition;
 
@@ -94,20 +103,30 @@ const ParallaxDiv = ({
     };
   }, [handleScroll]);
 
+  const finalStyle = (style = {
+    ...style,
+    "--parallax": `${parallax}`,
+    "--half-parallax": `${halfParallax}`,
+    "--inverted-parallax": `${invertedParallax}`,
+    "--half-inverted-parallax": `${halfInvertedParallax}`,
+  } as CSSProperties);
+
+  const finalClass = classNames(
+    className,
+    parallax > 0 && startClassname,
+    parallax === 1 && endClassname
+  );
+
+  if (useInternalDiv) {
+    return (
+      <div ref={ref} style={finalStyle} {...rest}>
+        <div className={finalClass}>{children}</div>
+      </div>
+    );
+  }
+
   return (
-    <div
-      ref={ref}
-      {...rest}
-      style={
-        {
-          ...style,
-          "--parallax": `${parallax}`,
-          "--half-parallax": `${halfParallax}`,
-          "--inverted-parallax": `${invertedParallax}`,
-          "--half-inverted-parallax": `${halfInvertedParallax}`,
-        } as CSSProperties
-      }
-    >
+    <div ref={ref} style={finalStyle} className={finalClass} {...rest}>
       {children}
     </div>
   );
