@@ -1,7 +1,38 @@
-$amount: 100px;
+$amount: 10vh;
+$time: 0.5s;
+$function: cubic-bezier(0.65, 0, 0.35, 1);
 
-.parallax {
+// .parallax {
+//   position: relative;
+//   top: calc(var(--inverted-parallax) * $amount);
+//   opacity: var(--parallax);
+// }
+
+// .parallax {
+//   position: relative;
+//   transition: top $time $function, opacity $time $function;
+//   opacity: 0;
+//   top: $amount;
+
+//   &.start {
+//     opacity: 1;
+//     top: 0;
+//   }
+// }
+
+.wrapper {
   position: relative;
-  top: calc(var(--inverted-parallax) * $amount);
-  opacity: var(--parallax);
+  transition: top $time $function, opacity $time $function;
+  opacity: 0;
+  top: $amount;
+
+  &.start {
+    opacity: 1;
+    top: 0;
+  }
+
+  &.end {
+    opacity: 0;
+    top: -$amount;
+  }
 }

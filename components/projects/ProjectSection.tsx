@@ -22,25 +22,27 @@ const ProjectSection = ({
   imageAlt,
   invert,
 }: React.PropsWithChildren<Props>) => {
-  const parallaxOptions: ParallaxDivProps = {
-    endPosition: 0,
-    viewportStart: 1,
-    viewportEnd: 0.5,
-    func: easeOutSine,
+  const wrapperParallax: ParallaxDivProps = {
+    viewportStart: 0.8,
+    viewportEnd: 0.2,
+    useInternalDiv: true,
+    className: styles["wrapper"],
+    startClassname: styles["start"],
+    endClassname: styles["end"],
   };
 
   return (
-    <div
-      className={classNames(
-        "row pb-6 gx-md-2",
-        invert && "direction-md-row-reverse"
-      )}
-    >
-      {invert && <div className={classNames("col-md-1")}></div>}
+    <div className="pb-6">
+      <ParallaxDiv {...wrapperParallax}>
+        <div
+          className={classNames(
+            "row gx-md-2",
+            invert && "direction-md-row-reverse"
+          )}
+        >
+          {invert && <div className={classNames("col-md-1")}></div>}
 
-      <div className={classNames("col-md-5 pb-3")}>
-        <ParallaxDiv {...parallaxOptions}>
-          <div className={styles["parallax"]}>
+          <div className={classNames("col-md-5 pb-3")}>
             <h2
               className={classNames(
                 "font-size-3",
@@ -49,25 +51,16 @@ const ProjectSection = ({
             >
               {title}
             </h2>
-          </div>
-        </ParallaxDiv>
-
-        <ParallaxDiv {...parallaxOptions}>
-          <div className={styles["parallax"]}>
             <Image src={imageSrc} alt={imageAlt} />
           </div>
-        </ParallaxDiv>
-      </div>
 
-      <div className="col-md-1 display-flex justify-content-center">
-        <SimpleDivider direction="vertical" />
-      </div>
+          <div className="col-md-1 display-flex justify-content-center">
+            <SimpleDivider direction="vertical" />
+          </div>
 
-      <div className={classNames("col-md-5")}>
-        <ParallaxDiv {...parallaxOptions}>
-          <div className={styles["parallax"]}>{children}</div>
-        </ParallaxDiv>
-      </div>
+          <div className={classNames("col-md-5")}>{children}</div>
+        </div>
+      </ParallaxDiv>
     </div>
   );
 };
