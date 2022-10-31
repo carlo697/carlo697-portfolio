@@ -36,7 +36,7 @@ const Home: NextPage = () => {
           <ParallaxDiv startPosition={0} viewportStart={0} viewportEnd={0}>
             <div className="container">
               <div className="position-relative">
-                <div className="row pb-md-6 pb-lg-4">
+                <div className="row pb-md-6 pb-lg-2">
                   <div className="col-12 col-md-10">
                     <div className={styles["terrain-canvas-parent"]}>
                       <TerrainCanvas
@@ -50,15 +50,23 @@ const Home: NextPage = () => {
                   </div>
                 </div>
 
-                <div className="row position-md-absolute bottom-md-0 right-md-0 pointer-events-md-none">
+                <div className="position-md-absolute bottom-md-0 right-md-0 width-md-50">
                   <div className="col-md-7"></div>
-                  <div className="col-12 col-md-5">
-                    <p className="text-center text-md-right font-size-4 font-weight-light">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Nullam feugiat efficitur vulputate. Vestibulum ac leo
-                      turpis. Cras lobortis ipsum ut lacinia porttitor. In eu
-                      condimentum est. Phasellus venenatis nec augue eget
-                      gravida.
+                  <div className="col-12 col-md-5 text-center text-md-right font-weight-light">
+                    <p className="font-size-4 mb-1">
+                      ¡Presione y arrastre el mapa para girarlo!
+                    </p>
+                    <p className="font-size-5 color-light-gray">
+                      Este modelo es generado, animado y renderizado de forma
+                      procedimental (procedural) en tiempo real usando
+                      JavaScript y{" "}
+                      <a
+                        href="https://threejs.org/"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        Three.js
+                      </a>
                     </p>
                   </div>
                 </div>
@@ -71,17 +79,17 @@ const Home: NextPage = () => {
           <div className="container">
             <StickyNavbar>
               <StickyNavbarButton href="#about" start="#about" end="#projects">
-                About
+                Acerca
               </StickyNavbarButton>
               <StickyNavbarButton
                 href="#projects"
                 start="#projects"
                 end="#contact"
               >
-                Projects
+                Proyectos
               </StickyNavbarButton>
               <StickyNavbarButton href="#contact" start="#contact" end="#end">
-                Contact
+                Contáctame
               </StickyNavbarButton>
             </StickyNavbar>
           </div>
@@ -94,27 +102,19 @@ const Home: NextPage = () => {
             <div className="row">
               <div className="col-12">
                 <h1 id="about" className="text-center mb-4">
-                  About
+                  ¿Quién soy?
                 </h1>
               </div>
             </div>
 
             <div className="row">
-              <div className="col">
+              <div className="col color-light-gray">
                 <p className="font-size-5 pb-4">
-                  Proin orci odio, dapibus a tristique nec, consectetur eu
-                  risus. Nunc vitae elit fermentum dui volutpat dapibus. Morbi
-                  semper congue placerat. Donec sit amet leo lacus. Maecenas in
-                  est eu urna molestie aliquet. Integer id dignissim purus. Sed
-                  finibus lectus ligula, a commodo mauris molestie sed. Quisque
-                  eu tristique dolor. Aliquam sit amet facilisis nisi, vitae
-                  convallis nunc. Pellentesque pellentesque risus ullamcorper
-                  enim hendrerit iaculis. Nullam tempor bibendum sem ac
-                  eleifend. Mauris imperdiet aliquam mauris, vel fermentum
-                  mauris sollicitudin iaculis. Sed sodales a tellus id egestas.
-                  Quisque sit amet egestas arcu, nec tincidunt nibh. Fusce eu
-                  tellus nec arcu ultricies laoreet. Fusce accumsan condimentum
-                  velit, sed hendrerit justo dapibus sed.
+                  Soy <strong>Carlos Peña</strong>, desarrollador web
+                  especializado principalmente en el Front-End. ¡Desarrollé este
+                  sitio para demostrar mis habilidades y los proyectos en los
+                  que he trabajado! Puede presionar las siguientes tarjetas para
+                  ver una lista de las tecnologías que manejo.
                 </p>
               </div>
 
@@ -122,23 +122,29 @@ const Home: NextPage = () => {
                 <HorizontalAccordion minHeight={250}>
                   <HorizontalItem
                     id="tab1"
-                    title="Titulo 1"
+                    title="Front-End"
                     backgroundSrc={test01}
                     backgroundPosition="center 20%"
                   >
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Nunc eleifend est at sem cursus, vitae fermentum massa
-                      hendrerit.
-                    </p>
+                    <div className="font-size-5">
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Nunc eleifend est at sem cursus, vitae fermentum massa
+                        hendrerit.
+                      </p>
 
-                    <p>
-                      Quisque tellus leo, sodales eu sollicitudin sit amet,
-                      sollicitudin et dui. Morbi felis diam, varius id turpis
-                      vitae, accumsan scelerisque lectus. Duis fringilla ut
-                      purus quis mollis. Nunc ac scelerisque metus. Vivamus erat
-                      purus, maximus sed libero sed, vehicula tincidunt quam.
-                    </p>
+                      <ul>
+                        <li>HTML</li>
+                        <li>CSS/SASS</li>
+                        <li>JavaScript</li>
+                        <li>TypeScript</li>
+                        <li>React</li>
+                        <li>Next.js</li>
+                        <li>React Native</li>
+                        <li>GraphQL</li>
+                        <li>Vue 2</li>
+                      </ul>
+                    </div>
                   </HorizontalItem>
 
                   <HorizontalItem
@@ -147,33 +153,66 @@ const Home: NextPage = () => {
                     backgroundSrc={test02}
                     backgroundPosition="center 80%"
                   >
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Nunc eleifend est at sem cursus, vitae fermentum massa
-                      hendrerit.
-                    </p>
+                    <div className="font-size-5">
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Nunc eleifend est at sem cursus, vitae fermentum massa
+                        hendrerit.
+                      </p>
+
+                      <ul>
+                        <li>Node.js</li>
+                        <li>Express</li>
+                        <li>Nest.js</li>
+                        <li>Prisma (ORM)</li>
+                        <li>Sequelize</li>
+                        <li>Laravel</li>
+                        <li>Heroku</li>
+                      </ul>
+                    </div>
                   </HorizontalItem>
 
                   <HorizontalItem
                     id="tab3"
-                    title="Titulo 3"
+                    title="3D"
                     backgroundSrc={test03}
                     backgroundPosition="center 80%"
                   >
-                    Hola 3
+                    <div className="font-size-5">
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Nunc eleifend.
+                      </p>
+
+                      <ul>
+                        <li>Blender 2.79</li>
+                        <li>Blender 2.8+</li>
+                        <li>Modelado 3D</li>
+                        <li>Texturizado 3D</li>
+                        <li>Substance Painter</li>
+                      </ul>
+                    </div>
                   </HorizontalItem>
 
                   <HorizontalItem
                     id="tab4"
-                    title={
-                      <>
-                        Titulo 4 - <strong>TEST</strong>
-                      </>
-                    }
+                    title="Extras"
                     backgroundSrc={test04}
                     backgroundPosition="center 80%"
                   >
-                    Hola 3
+                    <div className="font-size-5">
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Nunc eleifend est at sem cursus, vitae fermentum massa
+                        hendrerit.
+                      </p>
+
+                      <ul>
+                        <li>C#</li>
+                        <li>Git</li>
+                        <li>Scrum</li>
+                      </ul>
+                    </div>
                   </HorizontalItem>
                 </HorizontalAccordion>
               </div>
@@ -188,7 +227,7 @@ const Home: NextPage = () => {
             <div className="row">
               <div className="col-12">
                 <h1 id="projects" className="text-center mb-5">
-                  Projects
+                  Proyectos
                 </h1>
               </div>
             </div>
@@ -280,7 +319,7 @@ const Home: NextPage = () => {
             <div className="row">
               <div className="col-md-4 display-flex align-items-center">
                 <div className="pt-md-4 pb-4 pr-md-3">
-                  <h1 className="mb-3">Contact Me</h1>
+                  <h1 className="mb-3">Contáctame</h1>
 
                   <p className="font-size-5 color-light-gray">
                     Proin orci odio, dapibus a tristique nec, consectetur eu

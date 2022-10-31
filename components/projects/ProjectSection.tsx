@@ -58,7 +58,15 @@ const ProjectSection = ({
             <SimpleDivider direction="vertical" />
           </div>
 
-          <div className={classNames("col-md-5")}>{children}</div>
+          <div className={classNames("col-md-5")}>
+            <h2
+              className={classNames("font-size-3")}
+              style={{ visibility: "hidden" }}
+            >
+              {title}
+            </h2>
+            {children}
+          </div>
         </div>
       </ParallaxDiv>
     </div>

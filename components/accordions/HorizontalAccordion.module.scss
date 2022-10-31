@@ -10,6 +10,6 @@
   transition: min-height var(--transition-time);
 
   @include breakpoint-at(md) {
-    --item-width: calc(var(--width) * 0.75);
+    --item-width: calc(var(--width) * 0.5);
   }
 }

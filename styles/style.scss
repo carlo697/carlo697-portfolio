@@ -5,6 +5,7 @@
 @import "base/text";
 @import "base/grid";
 @import "base/position";
+@import "base/sizing";
 @import "base/flexbox";
 @import "base/pointer";
 
@@ -31,6 +32,10 @@ html {
   scroll-padding-top: 6rem;
   scrollbar-color: $scrollbar-thumb $scrollbar-track;
   scrollbar-width: thin;
+}
+
+a {
+  color: inherit;
 }
 
 canvas {

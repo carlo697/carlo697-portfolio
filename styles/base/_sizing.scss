@@ -1,0 +1,14 @@
+@import "utilities";
+@import "variables";
+
+@include utility-map(
+  (
+    width: (
+      property: width,
+      values: (
+        100: 100%,
+        50: 50%,
+      ),
+    ),
+  )
+);
