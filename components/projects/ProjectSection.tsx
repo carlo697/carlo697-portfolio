@@ -51,7 +51,7 @@ const ProjectSection = ({
             >
               {title}
             </h2>
-            <Image src={imageSrc} alt={imageAlt} />
+            <Image src={imageSrc} alt={imageAlt} placeholder="blur" />
           </div>
 
           <div className="col-md-1 display-flex justify-content-center">
