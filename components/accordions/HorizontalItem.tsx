@@ -16,6 +16,7 @@ type Props = {
   title?: React.ReactNode;
   backgroundSrc?: string | StaticImageData;
   backgroundPosition?: string;
+  isDefault?: boolean;
 };
 
 const HorizontalItem = ({
@@ -24,6 +25,7 @@ const HorizontalItem = ({
   title,
   backgroundSrc,
   backgroundPosition = "center center",
+  isDefault = false,
 }: React.PropsWithChildren<Props>) => {
   const contentRef = useRef<HTMLDivElement>(null);
   const { activeTab, openTab, minHeight } = useContext(accordionContext);
@@ -52,6 +54,13 @@ const HorizontalItem = ({
       window.removeEventListener("resize", updateHeight);
     };
   }, [updateHeight]);
+
+  useEffect(() => {
+    if (isDefault) {
+      openTab(id);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   // Update height on first render
   useEffect(() => {

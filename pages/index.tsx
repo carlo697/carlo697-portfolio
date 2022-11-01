@@ -132,6 +132,7 @@ const Home: NextPage = () => {
                     title={<span className="font-weight-bold">Front-End</span>}
                     backgroundSrc={test01}
                     backgroundPosition="center 20%"
+                    isDefault={true}
                   >
                     <div className="font-size-5">
                       <p>
