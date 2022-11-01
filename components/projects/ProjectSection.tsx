@@ -60,8 +60,9 @@ const ProjectSection = ({
 
           <div className={classNames("col-md-5")}>
             <h2
-              className={classNames("font-size-3")}
-              style={{ visibility: "hidden" }}
+              className={classNames(
+                "font-size-3 display-none display-md-block visibility-hidden"
+              )}
             >
               {title}
             </h2>
