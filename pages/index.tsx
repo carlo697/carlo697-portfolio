@@ -35,6 +35,14 @@ const Home: NextPage = () => {
         <section className={classNames(styles["terrain-section"], "pb-5")}>
           <ParallaxDiv startPosition={0} viewportStart={0} viewportEnd={0}>
             <div className="container">
+              <div className="row">
+                <div className="col">
+                  <h1 className="text-center mb-0 pt-2 pt-md-4 font-size-2 font-size-md-1">
+                    Mi Portafolio
+                  </h1>
+                </div>
+              </div>
+
               <div className="position-relative">
                 <div className="row pb-md-6 pb-lg-2">
                   <div className="col-12 col-md-10">
@@ -51,8 +59,7 @@ const Home: NextPage = () => {
                 </div>
 
                 <div className="position-md-absolute bottom-md-0 right-md-0 width-md-50">
-                  <div className="col-md-7"></div>
-                  <div className="col-12 col-md-5 text-center text-md-right font-weight-light">
+                  <div className="text-center text-md-right font-weight-light">
                     <p className="font-size-4 mb-1">
                       ¡Presione y arrastre el mapa para girarlo!
                     </p>
@@ -122,7 +129,7 @@ const Home: NextPage = () => {
                 <HorizontalAccordion minHeight={250}>
                   <HorizontalItem
                     id="tab1"
-                    title="Front-End"
+                    title={<span className="font-weight-bold">Front-End</span>}
                     backgroundSrc={test01}
                     backgroundPosition="center 20%"
                   >
@@ -149,7 +156,7 @@ const Home: NextPage = () => {
 
                   <HorizontalItem
                     id="tab2"
-                    title="Titulo 2"
+                    title={<span className="font-weight-bold">Back-End</span>}
                     backgroundSrc={test02}
                     backgroundPosition="center 80%"
                   >
@@ -174,7 +181,7 @@ const Home: NextPage = () => {
 
                   <HorizontalItem
                     id="tab3"
-                    title="3D"
+                    title={<span className="font-weight-bold">3D</span>}
                     backgroundSrc={test03}
                     backgroundPosition="center 80%"
                   >
@@ -196,7 +203,7 @@ const Home: NextPage = () => {
 
                   <HorizontalItem
                     id="tab4"
-                    title="Extras"
+                    title={<span className="font-weight-bold">Extras</span>}
                     backgroundSrc={test04}
                     backgroundPosition="center 80%"
                   >

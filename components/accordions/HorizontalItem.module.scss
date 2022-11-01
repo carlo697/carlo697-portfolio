@@ -63,7 +63,11 @@
   }
 
   @include breakpoint-at(md) {
-    font-size: 1rem;
+    font-size: 1.2rem;
+  }
+
+  @include breakpoint-at(lg) {
+    font-size: 1.5rem;
   }
 }
 
