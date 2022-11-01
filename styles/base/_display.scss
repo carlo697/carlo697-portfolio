@@ -1,0 +1,12 @@
+@include utility-map(
+  (
+    display: (
+      property: display,
+      values: block flex none,
+    ),
+    visibility: (
+      property: visibility,
+      values: hidden visible,
+    ),
+  )
+);
