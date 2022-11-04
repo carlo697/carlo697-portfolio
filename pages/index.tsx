@@ -320,8 +320,9 @@ const Home: NextPage = () => {
         <SimpleDivider useContainer />
 
         <section
-          className={classNames(styles["blue-background"], "pt-6 pb-7")}
+          className={classNames(styles["blue-background"], "pt-6 pb-4")}
           id="contact"
+          style={{ minHeight: "60vh" }}
         >
           <div className="container">
             <div className="row">
