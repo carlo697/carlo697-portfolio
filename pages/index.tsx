@@ -108,9 +108,9 @@ const Home: NextPage = () => {
           <div className="container">
             <div className="row">
               <div className="col-12">
-                <h1 id="about" className="text-center mb-4">
+                <h2 id="about" className="h1 text-center mb-4">
                   ¿Quién soy?
-                </h1>
+                </h2>
               </div>
             </div>
 
@@ -135,6 +135,8 @@ const Home: NextPage = () => {
                     isDefault={true}
                   >
                     <div className="font-size-5">
+                      <h3 className="h4 text-center">Front-End</h3>
+
                       <p>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                         Nunc eleifend est at sem cursus, vitae fermentum massa
@@ -162,6 +164,8 @@ const Home: NextPage = () => {
                     backgroundPosition="center 80%"
                   >
                     <div className="font-size-5">
+                      <h3 className="h4 text-center">Back-End</h3>
+
                       <p>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                         Nunc eleifend est at sem cursus, vitae fermentum massa
@@ -187,6 +191,8 @@ const Home: NextPage = () => {
                     backgroundPosition="center 80%"
                   >
                     <div className="font-size-5">
+                      <h3 className="h4 text-center">3D</h3>
+
                       <p>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                         Nunc eleifend.
@@ -209,6 +215,8 @@ const Home: NextPage = () => {
                     backgroundPosition="center 80%"
                   >
                     <div className="font-size-5">
+                      <h3 className="h4 text-center">Extras</h3>
+
                       <p>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                         Nunc eleifend est at sem cursus, vitae fermentum massa
@@ -234,9 +242,9 @@ const Home: NextPage = () => {
           <div className="container">
             <div className="row">
               <div className="col-12">
-                <h1 id="projects" className="text-center mb-5">
+                <h2 id="projects" className="h1 text-center mb-5">
                   Proyectos
-                </h1>
+                </h2>
               </div>
             </div>
 
@@ -328,7 +336,7 @@ const Home: NextPage = () => {
             <div className="row">
               <div className="col-md-4 display-flex align-items-center">
                 <div className="pt-md-4 pb-4 pr-md-3">
-                  <h1 className="mb-3">Contáctame</h1>
+                  <h2 className="h1 mb-3">Contáctame</h2>
 
                   <p className="font-size-5 color-light-gray">
                     Proin orci odio, dapibus a tristique nec, consectetur eu
