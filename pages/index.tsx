@@ -12,11 +12,11 @@ import test01 from "../public/images/test-01.jpg";
 import test02 from "../public/images/test-02.jpg";
 import test03 from "../public/images/test-03.jpg";
 import test04 from "../public/images/test-04.jpg";
-import test05 from "../public/images/test-05.jpg";
+import evolutionSimulation from "../public/images/evolution-simulation.jpg";
 import SimpleDivider from "../components/separators/SimpleDivider";
 import { GoMailRead } from "react-icons/go";
-import { FaLinkedin } from "react-icons/fa";
-import { FaGithub } from "react-icons/fa";
+import { FaLinkedin, FaGithub } from "react-icons/fa";
+import { HiCursorClick } from "react-icons/hi";
 import ListGroup from "../components/cards/ListGroup";
 import ListGroupItem from "../components/cards/ListGroupItem";
 import ProjectSection from "../components/projects/ProjectSection";
@@ -242,25 +242,67 @@ const Home: NextPage = () => {
             </div>
 
             <ProjectSection
-              title="This is the title of a project"
-              imageSrc={test05}
-              imageAlt="project 1"
+              title="Simulador de Evolución"
+              imageSrc={evolutionSimulation}
+              imageAlt="screenshot of the evolution simulation project"
             >
               <p className="font-size-5">
-                Proin orci odio, dapibus a tristique nec, consectetur eu risus.
-                Nunc vitae elit fermentum dui volutpat dapibus. Morbi semper
-                congue placerat. Donec sit amet leo lacus. Maecenas in est eu
-                urna molestie aliquet. Integer id dignissim purus. Sed finibus
-                lectus ligula, a commodo mauris molestie sed. Quisque eu
-                tristique dolor. Aliquam sit amet facilisis nisi, vitae
-                convallis nunc. Pellentesque pellentesque risus ullamcorper enim
-                hendrerit iaculis. Nullam tempor bibendum sem ac eleifend.
-                Mauris imperdiet aliquam mauris, vel fermentum mauris
-                sollicitudin iaculis. Sed sodales a tellus id egestas. Quisque
-                sit amet egestas arcu, nec tincidunt nibh. Fusce eu tellus nec
-                arcu ultricies laoreet. Fusce accumsan condimentum velit, sed
-                hendrerit justo dapibus sed.
+                Este proyecto personal consiste en una simulación de evolución
+                biológica dentro del navegador. La simulación posee una
+                cuadricula (el mapa) donde cada pixel de color representa a una
+                criatura con una red neuronal de cerebro. Dicho cerebro le dice
+                a la criatura en qué dirección moverse. En el mapa también hay
+                obstáculos de color gris y una zona azul donde las criaturas
+                pueden reproducirse. Las criaturas que entren a la zona azul
+                sobrevivirán y sus genes pasaran a la siguiente generación.
               </p>
+
+              <p className="font-size-5">
+                En la primera generación las criaturas poseen un cerebro
+                totalmente aleatorio, pero, con cada generación se insertan
+                mutaciones aleatorias. Gracias a la selección natural, con cada
+                generación que pase las criaturas se volverán cada vez más
+                habilidosas para llegar a la zona azul y reproducirse.
+              </p>
+
+              <p className="font-size-5">
+                Inspirado por el video &quot;
+                <a
+                  href="https://www.youtube.com/watch?v=N3tRFayqVtk"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  I programmed some creatures. They Evolved.
+                </a>
+                &quot; de{" "}
+                <a
+                  href="https://github.com/davidrmiller"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  David R. Miller
+                </a>
+              </p>
+
+              <div className="btn-group pt-3">
+                <a
+                  href="https://evolution-simulation.netlify.app/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn btn-primary btn-icon-right"
+                >
+                  ¡Visitar! <HiCursorClick />
+                </a>
+
+                <a
+                  href="https://github.com/carlo697/js-biosim"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn btn-dark btn-icon-right"
+                >
+                  Codigo Fuente <FaGithub />
+                </a>
+              </div>
             </ProjectSection>
 
             <ProjectSection
