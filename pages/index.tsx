@@ -138,9 +138,8 @@ const Home: NextPage = () => {
                       <h3 className="h4 text-center">Front-End</h3>
 
                       <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Nunc eleifend est at sem cursus, vitae fermentum massa
-                        hendrerit.
+                        ¡Aplicaciones modernas desarrolladas tomando en cuenta
+                        el rendimiento y el SEO con server side rendering!
                       </p>
 
                       <ul>
@@ -167,9 +166,8 @@ const Home: NextPage = () => {
                       <h3 className="h4 text-center">Back-End</h3>
 
                       <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Nunc eleifend est at sem cursus, vitae fermentum massa
-                        hendrerit.
+                        Desarrollo de APIs REST utilizando las siguientes
+                        herramientas:
                       </p>
 
                       <ul>
@@ -177,8 +175,9 @@ const Home: NextPage = () => {
                         <li>Express</li>
                         <li>Nest.js</li>
                         <li>Prisma (ORM)</li>
-                        <li>Sequelize</li>
+                        <li>Sequelize (ORM)</li>
                         <li>Laravel</li>
+                        <li>WordPress (headless)</li>
                         <li>Heroku</li>
                       </ul>
                     </div>
@@ -194,16 +193,15 @@ const Home: NextPage = () => {
                       <h3 className="h4 text-center">3D</h3>
 
                       <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Nunc eleifend.
+                        Modelado 3D y ¡Fundamento de desarrollo de videojuegos!
                       </p>
 
                       <ul>
-                        <li>Blender 2.79</li>
-                        <li>Blender 2.8+</li>
+                        <li>Blender</li>
+                        <li>Substance Painter (básico)</li>
                         <li>Modelado 3D</li>
                         <li>Texturizado 3D</li>
-                        <li>Substance Painter</li>
+                        <li>Unity</li>
                       </ul>
                     </div>
                   </HorizontalItem>
@@ -217,14 +215,9 @@ const Home: NextPage = () => {
                     <div className="font-size-5">
                       <h3 className="h4 text-center">Extras</h3>
 
-                      <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Nunc eleifend est at sem cursus, vitae fermentum massa
-                        hendrerit.
-                      </p>
-
                       <ul>
                         <li>C#</li>
+                        <li>Arduino y Electrónica Básica</li>
                         <li>Git</li>
                         <li>Scrum</li>
                       </ul>
