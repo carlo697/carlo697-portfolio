@@ -1,11 +1,9 @@
 import classNames from "classnames";
-import Image, { StaticImageData } from "next/image";
+import { StaticImageData } from "next/image";
 import React, { ReactNode } from "react";
-import ParallaxDiv, {
-  easeOutSine,
-  ParallaxDivProps,
-} from "../animations/ParallaxDiv";
+import ParallaxDiv, { ParallaxDivProps } from "../animations/ParallaxDiv";
 import SimpleDivider from "../separators/SimpleDivider";
+import Slider, { SliderProps } from "../sliders/Slider";
 import styles from "./ProjectSection.module.scss";
 
 type Props = {
@@ -13,14 +11,13 @@ type Props = {
   imageSrc: string | StaticImageData;
   imageAlt: string;
   invert?: boolean;
-};
+} & SliderProps;
 
 const ProjectSection = ({
   children,
   title,
-  imageSrc,
-  imageAlt,
   invert,
+  images,
 }: React.PropsWithChildren<Props>) => {
   const wrapperParallax: ParallaxDivProps = {
     viewportStart: 0.8,
@@ -36,32 +33,31 @@ const ProjectSection = ({
       <ParallaxDiv {...wrapperParallax}>
         <div
           className={classNames(
-            "row gx-md-2",
-            invert && "direction-md-row-reverse"
+            "row gx-xl-2",
+            invert && "direction-xl-row-reverse"
           )}
         >
-          {invert && <div className={classNames("col-md-1")}></div>}
-
-          <div className={classNames("col-md-5 pb-3")}>
+          <div className={classNames("col col-xl-6 pb-3 pt-xl-3")}>
             <h2
               className={classNames(
                 "font-size-3",
-                invert ? "text-md-left" : "text-md-right"
+                invert ? "text-xl-left" : "text-xl-right"
               )}
             >
               {title}
             </h2>
-            <Image src={imageSrc} alt={imageAlt} placeholder="blur" />
+            {/* <Image src={imageSrc} alt={imageAlt} placeholder="blur" /> */}
+            <Slider images={images} />
           </div>
 
-          <div className="col-md-1 display-flex justify-content-center">
+          <div className="col-xl-1 display-none display-xl-flex justify-content-center">
             <SimpleDivider direction="vertical" />
           </div>
 
-          <div className={classNames("col-md-5")}>
+          <div className={classNames("col-xl-5")}>
             <h2
               className={classNames(
-                "font-size-3 display-none display-md-block visibility-hidden"
+                "font-size-3 display-none display-xl-block visibility-hidden"
               )}
             >
               {title}

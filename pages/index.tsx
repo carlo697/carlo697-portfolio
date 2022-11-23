@@ -12,7 +12,10 @@ import test01 from "../public/images/test-01.jpg";
 import test02 from "../public/images/test-02.jpg";
 import test03 from "../public/images/test-03.jpg";
 import test04 from "../public/images/test-04.jpg";
-import evolutionSimulation from "../public/images/evolution-simulation.jpg";
+import evolutionSimulation1 from "../public/images/evolution-simulation-1.jpg";
+import evolutionSimulation2 from "../public/images/evolution-simulation-2.jpg";
+import evolutionSimulation3 from "../public/images/evolution-simulation-3.jpg";
+import evolutionSimulation4 from "../public/images/evolution-simulation-4.jpg";
 import SimpleDivider from "../components/separators/SimpleDivider";
 import { GoMailRead } from "react-icons/go";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
@@ -243,8 +246,26 @@ const Home: NextPage = () => {
 
             <ProjectSection
               title="Simulador de Evolución"
-              imageSrc={evolutionSimulation}
+              imageSrc={evolutionSimulation1}
               imageAlt="screenshot of the evolution simulation project"
+              images={[
+                {
+                  alt: "screenshot of the evolution simulation project",
+                  src: evolutionSimulation1,
+                },
+                {
+                  alt: "screenshot of the evolution simulation project showing the neural network of a creature",
+                  src: evolutionSimulation2,
+                },
+                {
+                  alt: "screenshot of the evolution simulation project showing the neural network of a creature",
+                  src: evolutionSimulation3,
+                },
+                {
+                  alt: "screenshot of the evolution simulation project showing the neural network of a creature",
+                  src: evolutionSimulation4,
+                },
+              ]}
             >
               <p className="font-size-5">
                 Este proyecto personal consiste en una simulación de evolución
@@ -282,6 +303,7 @@ const Home: NextPage = () => {
                 >
                   David R. Miller
                 </a>
+                .
               </p>
 
               <div className="btn-group pt-3">
@@ -310,6 +332,12 @@ const Home: NextPage = () => {
               imageSrc={test02}
               imageAlt="project 2"
               invert={true}
+              images={[
+                {
+                  alt: "project 2",
+                  src: test02,
+                },
+              ]}
             >
               <p className="font-size-5">
                 Proin orci odio, dapibus a tristique nec, consectetur eu risus.
@@ -332,6 +360,12 @@ const Home: NextPage = () => {
               title="This is the title of a project"
               imageSrc={test03}
               imageAlt="project 3"
+              images={[
+                {
+                  alt: "project 3",
+                  src: test03,
+                },
+              ]}
             >
               <p className="font-size-5">
                 Proin orci odio, dapibus a tristique nec, consectetur eu risus.
