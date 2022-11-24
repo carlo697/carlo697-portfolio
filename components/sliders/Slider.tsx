@@ -29,75 +29,70 @@ const Slider = ({ images }: React.PropsWithoutRef<SliderProps>) => {
   const enableButtons = images.length > 1;
 
   return (
-    <div>
-      <div className={styles["first-row"]}>
-        {enableButtons && (
+    <div className={styles["wrapper"]}>
+      <div className={styles["slides-wrapper"]}>
+        {images.map(({ src, alt }, index) => {
+          const className =
+            index < currentSlide
+              ? styles["slide-left"]
+              : index > currentSlide
+              ? styles["slide-right"]
+              : styles["slide-active"];
+
+          return (
+            <div
+              className={classNames(styles["img-wrapper"], className)}
+              key={index}
+            >
+              <Image
+                src={src}
+                alt={alt}
+                placeholder="blur"
+                className="hola"
+                objectFit="contain"
+              />
+            </div>
+          );
+        })}
+      </div>
+
+      {enableButtons && (
+        <div className={styles["second-row"]}>
           <button
-            className={styles["arrow-wrapper"]}
+            className={styles["arrow-button"]}
             onClick={() => setIndex(currentSlide - 1)}
           >
             <BsChevronCompactLeft />
           </button>
-        )}
 
-        <div className={styles["slides-wrapper"]}>
-          {images.map(({ src, alt }, index) => {
-            const className =
-              index < currentSlide
-                ? styles["slide-left"]
-                : index > currentSlide
-                ? styles["slide-right"]
-                : styles["slide-active"];
+          <div className={styles["previews"]}>
+            {images.map(({ src, alt }, index) => {
+              return (
+                <button
+                  className={classNames(
+                    styles["img-preview-wrapper"],
+                    index === currentSlide && styles["active"]
+                  )}
+                  key={index}
+                  onClick={() => setCurrentSlide(index)}
+                >
+                  <Image
+                    src={src}
+                    alt={alt}
+                    placeholder="blur"
+                    objectFit="cover"
+                  />
+                </button>
+              );
+            })}
+          </div>
 
-            return (
-              <div
-                className={classNames(styles["img-wrapper"], className)}
-                key={index}
-              >
-                <Image
-                  src={src}
-                  alt={alt}
-                  placeholder="blur"
-                  className="hola"
-                  objectFit="contain"
-                />
-              </div>
-            );
-          })}
-        </div>
-
-        {enableButtons && (
           <button
-            className={styles["arrow-wrapper"]}
+            className={styles["arrow-button"]}
             onClick={() => setIndex(currentSlide + 1)}
           >
             <BsChevronCompactRight />
           </button>
-        )}
-      </div>
-
-      {enableButtons && (
-        <div className={styles["previews"]}>
-          {images.map(({ src, alt }, index) => {
-            return (
-              <button
-                className={classNames(
-                  styles["img-preview-wrapper"],
-                  index === currentSlide && styles["active"]
-                )}
-                key={index}
-                onClick={() => setCurrentSlide(index)}
-              >
-                <Image
-                  src={src}
-                  alt={alt}
-                  placeholder="blur"
-                  className="hola"
-                  objectFit="contain"
-                />
-              </button>
-            );
-          })}
         </div>
       )}
     </div>

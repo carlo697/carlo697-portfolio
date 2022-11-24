@@ -3,38 +3,10 @@
 
 $time: 0.4s;
 
-.first-row {
+.wrapper {
+  max-height: 85vh;
   display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  aspect-ratio: 1/1;
-
-  margin-bottom: 1rem;
-}
-
-.arrow-wrapper {
-  padding: 2rem 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 2rem;
-  font-size: 3rem;
-  cursor: pointer;
-
-  border: none;
-  outline: none;
-
-  color: white;
-  background-color: $dark;
-
-  svg {
-    flex-shrink: 0;
-  }
-
-  @include breakpoint-at(md) {
-    width: 2.5rem;
-    font-size: 4rem;
-  }
+  flex-direction: column;
 }
 
 .slides-wrapper {
@@ -42,6 +14,8 @@ $time: 0.4s;
   position: relative;
   flex-grow: 1;
   overflow: hidden;
+  aspect-ratio: 1/1;
+  margin-bottom: 1rem;
 }
 
 .img-wrapper {
@@ -65,9 +39,19 @@ $time: 0.4s;
 }
 
 .slide-right {
-  left: 50%;
+  left: 100%;
   opacity: 0;
   width: 50%;
+}
+
+.second-row {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+
+  @include breakpoint-at(md) {
+    gap: 1rem;
+  }
 }
 
 .previews {
@@ -77,20 +61,46 @@ $time: 0.4s;
 }
 
 .img-preview-wrapper {
+  flex-basis: 25%;
   aspect-ratio: 1/1;
-  height: 70px;
   overflow: hidden;
   border: none;
   outline: none;
   background: none;
   border: 3px solid transparent;
   cursor: pointer;
+  max-width: 110px;
+  padding: 0;
 
-  @include breakpoint-at(md) {
-    height: 100px;
+  & > span {
+    height: 100% !important;
   }
 
   &.active {
     border: 3px solid $white;
+  }
+}
+
+.arrow-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 3rem;
+  font-size: 3rem;
+  cursor: pointer;
+
+  border: none;
+  outline: none;
+
+  color: white;
+  background-color: $dark;
+
+  svg {
+    flex-shrink: 0;
+  }
+
+  @include breakpoint-at(md) {
+    width: 4rem;
+    font-size: 4rem;
   }
 }
