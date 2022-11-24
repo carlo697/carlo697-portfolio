@@ -54,15 +54,12 @@ const ProjectSection = ({
             <SimpleDivider direction="vertical" />
           </div>
 
-          <div className={classNames("col-xl-5")}>
-            <h2
-              className={classNames(
-                "font-size-3 display-none display-xl-block visibility-hidden"
-              )}
-            >
-              {title}
-            </h2>
-            {children}
+          <div
+            className={classNames(
+              "col-xl-5 pt-xl-3 display-flex align-items-center"
+            )}
+          >
+            <div>{children}</div>
           </div>
         </div>
       </ParallaxDiv>
