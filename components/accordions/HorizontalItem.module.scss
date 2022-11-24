@@ -7,7 +7,6 @@
   background-color: rgb(0, 0, 0);
   transition: transform 0.25s;
   position: relative;
-  overflow: hidden;
   z-index: 0;
 
   transition: flex-basis var(--transition-time),
@@ -17,7 +16,7 @@
   &.active {
     flex-basis: var(--item-width);
     flex-grow: 0;
-    transform: translateY(-6px);
+    // transform: translateY(-6px);
   }
 
   &:not(.active):hover {

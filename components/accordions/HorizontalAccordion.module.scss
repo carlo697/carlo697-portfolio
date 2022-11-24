@@ -6,6 +6,7 @@
 
   display: flex;
   width: 100%;
+  overflow: hidden;
 
   transition: min-height var(--transition-time);
 
