@@ -1,7 +1,7 @@
 import Image, { StaticImageData } from "next/image";
 import React, { useState } from "react";
 import styles from "./Slider.module.scss";
-import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
+import { BsChevronCompactLeft } from "react-icons/bs";
 import classNames from "classnames";
 
 export type SliderImage = {
@@ -59,7 +59,7 @@ const Slider = ({ images }: React.PropsWithoutRef<SliderProps>) => {
       {enableButtons && (
         <div className={styles["second-row"]}>
           <button
-            className={styles["arrow-button"]}
+            className={classNames(styles["arrow-button"], styles["left"])}
             onClick={() => setIndex(currentSlide - 1)}
           >
             <BsChevronCompactLeft />
@@ -88,10 +88,10 @@ const Slider = ({ images }: React.PropsWithoutRef<SliderProps>) => {
           </div>
 
           <button
-            className={styles["arrow-button"]}
+            className={classNames(styles["arrow-button"], styles["right"])}
             onClick={() => setIndex(currentSlide + 1)}
           >
-            <BsChevronCompactRight />
+            <BsChevronCompactLeft />
           </button>
         </div>
       )}

@@ -94,6 +94,7 @@ $border-radius: 5px;
   width: 3rem;
   font-size: 3rem;
   cursor: pointer;
+  padding: 0;
 
   border: none;
   outline: none;
@@ -102,9 +103,20 @@ $border-radius: 5px;
   color: white;
   background-color: $background-color;
 
+  &.right {
+    transform: rotateY(180deg);
+  }
+
   svg {
     -webkit-tap-highlight-color: transparent;
     flex-shrink: 0;
+    position: relative;
+    left: 0;
+    transition: left 0.25s;
+  }
+
+  &:hover svg {
+    left: -0.25rem;
   }
 
   @include breakpoint-at(md) {
@@ -126,11 +138,11 @@ $border-radius: 5px;
     content: "";
     position: absolute;
     top: 0;
-    left: 0;
-    width: 100%;
+    left: -50%;
+    width: 200%;
     height: 100%;
     background: radial-gradient(
-      circle farthest-side at 50% 0%,
+      circle farthest-side at 0% 50%,
       $highlight-color,
       transparent
     );
