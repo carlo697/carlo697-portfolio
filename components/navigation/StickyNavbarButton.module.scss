@@ -11,6 +11,7 @@
   text-align: center;
   transition: color 0.3s;
   z-index: 1;
+  -webkit-tap-highlight-color: transparent;
 
   padding: 0.8rem 0.5rem;
   font-size: 0.8rem;
@@ -43,10 +44,8 @@
     transition: opacity 0.3s;
     pointer-events: none;
   }
-}
 
-.sticked {
-  .button {
+  .sticked & {
     &:hover::before,
     &.active::before {
       opacity: 1;
