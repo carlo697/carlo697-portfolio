@@ -12,6 +12,10 @@ import test01 from "../public/images/test-01.jpg";
 import test02 from "../public/images/test-02.jpg";
 import test03 from "../public/images/test-03.jpg";
 import test04 from "../public/images/test-04.jpg";
+import motivaMainPage from "../public/images/motiva-main-page.jpg";
+import motivaPatiensImplantOverview1 from "../public/images/motiva-patients-implant-overview-1.jpg";
+import motivaPatiensImplantOverview2 from "../public/images/motiva-patients-implant-overview-2.jpg";
+import motivaPatientsBreastCancerJourney from "../public/images/motiva-patients-breast-cancer-journey.jpg";
 import evolutionSimulation1 from "../public/images/evolution-simulation-1.jpg";
 import evolutionSimulation2 from "../public/images/evolution-simulation-2.jpg";
 import evolutionSimulation3 from "../public/images/evolution-simulation-3.jpg";
@@ -249,7 +253,81 @@ const Home: NextPage = () => {
             </div>
 
             <ProjectSection
+              title="Motiva"
+              images={[
+                {
+                  alt: "screenshot of the evolution simulator",
+                  src: motivaMainPage,
+                },
+                {
+                  alt: "hla",
+                  src: motivaPatiensImplantOverview1,
+                },
+                {
+                  alt: "hla",
+                  src: motivaPatiensImplantOverview2,
+                },
+                {
+                  alt: "hla",
+                  src: motivaPatientsBreastCancerJourney,
+                },
+              ]}
+            >
+              <div className="font-size-5">
+                <p>
+                  Como empleado de{" "}
+                  <a
+                    href="https://qantamedia.com/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Qanta Media
+                  </a>{" "}
+                  y haciendo outsourcing para{" "}
+                  <a
+                    href="https://establishmentlabs.com/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Establishment Labs
+                  </a>
+                  , he trabajado con el sitio web principal de Motiva,
+                  realizando las siguientes labores:
+                </p>
+
+                <ul>
+                  <li>
+                    Mantener, desarrollar paginas y blogs (a base de los diseños
+                    facilitados) en el Wordpress headless del sitio.
+                  </li>
+
+                  <li>
+                    Agregar a las páginas y blogs las traducciones
+                    suministradas.
+                  </li>
+
+                  <li>
+                    Corregir bugs y agregar características nuevas al código
+                    Front-End escrito en Vue 2.
+                  </li>
+                </ul>
+              </div>
+
+              <div className="btn-group pt-3">
+                <a
+                  href="https://motiva.health/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn btn-primary btn-icon-right"
+                >
+                  ¡Visitar! <HiCursorClick />
+                </a>
+              </div>
+            </ProjectSection>
+
+            <ProjectSection
               title="Simulador de Evolución"
+              invert={true}
               images={[
                 {
                   alt: "screenshot of the evolution simulator",
@@ -331,7 +409,6 @@ const Home: NextPage = () => {
 
             <ProjectSection
               title="Aula Virtual de Instrumentación"
-              invert={true}
               images={[
                 {
                   alt: "Vista de la página principal del aula virtual. Muestra un menú de navegación azul arriba y un tablero de control eléctrico abajo",
@@ -403,6 +480,7 @@ const Home: NextPage = () => {
 
             <ProjectSection
               title="This is the title of a project"
+              invert={true}
               images={[
                 {
                   alt: "project 3",
