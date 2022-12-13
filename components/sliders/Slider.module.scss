@@ -20,7 +20,7 @@ $border-radius: 5px;
   flex-grow: 1;
   overflow: hidden;
   aspect-ratio: 1/1;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
 .img-wrapper {
@@ -55,7 +55,7 @@ $border-radius: 5px;
   justify-content: center;
 
   @include breakpoint-at(md) {
-    gap: 1rem;
+    gap: 2rem;
   }
 }
 
