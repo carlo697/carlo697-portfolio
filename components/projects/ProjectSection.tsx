@@ -8,8 +8,6 @@ import styles from "./ProjectSection.module.scss";
 
 type Props = {
   title: ReactNode;
-  imageSrc: string | StaticImageData;
-  imageAlt: string;
   invert?: boolean;
 } & SliderProps;
 
