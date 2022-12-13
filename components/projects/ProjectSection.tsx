@@ -1,5 +1,4 @@
 import classNames from "classnames";
-import { StaticImageData } from "next/image";
 import React, { ReactNode } from "react";
 import ParallaxDiv, { ParallaxDivProps } from "../animations/ParallaxDiv";
 import SimpleDivider from "../separators/SimpleDivider";
@@ -38,7 +37,7 @@ const ProjectSection = ({
           <div className={classNames("col col-xl-6 pb-3 pt-xl-3")}>
             <h2
               className={classNames(
-                "font-size-3",
+                "font-size-3 font-size-md-2",
                 invert ? "text-xl-left" : "text-xl-right"
               )}
             >
@@ -57,7 +56,7 @@ const ProjectSection = ({
               "col-xl-5 pt-xl-3 display-flex align-items-center"
             )}
           >
-            <div>{children}</div>
+            <div className={styles["content"]}>{children}</div>
           </div>
         </div>
       </ParallaxDiv>
