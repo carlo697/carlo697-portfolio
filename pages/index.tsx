@@ -16,6 +16,10 @@ import evolutionSimulation1 from "../public/images/evolution-simulation-1.jpg";
 import evolutionSimulation2 from "../public/images/evolution-simulation-2.jpg";
 import evolutionSimulation3 from "../public/images/evolution-simulation-3.jpg";
 import evolutionSimulation4 from "../public/images/evolution-simulation-4.jpg";
+import aulaVirtualPrincipal from "../public/images/aula-virtual-principal.jpg";
+import aulaVirtualNosotros from "../public/images/aula-virtual-nosotros.jpg";
+import aulaVirtualFuncionamiento from "../public/images/aula-virtual-funcionamiento.jpg";
+import aulaVirtualTanque from "../public/images/aula-virtual-tanque.jpg";
 import SimpleDivider from "../components/separators/SimpleDivider";
 import { GoMailRead } from "react-icons/go";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
@@ -246,23 +250,21 @@ const Home: NextPage = () => {
 
             <ProjectSection
               title="Simulador de Evolución"
-              imageSrc={evolutionSimulation1}
-              imageAlt="screenshot of the evolution simulation project"
               images={[
                 {
-                  alt: "screenshot of the evolution simulation project",
+                  alt: "screenshot of the evolution simulator",
                   src: evolutionSimulation1,
                 },
                 {
-                  alt: "screenshot of the evolution simulation project showing the neural network of a creature",
+                  alt: "screenshot of the map of the evolution simulator",
                   src: evolutionSimulation2,
                 },
                 {
-                  alt: "screenshot of the evolution simulation project showing the neural network of a creature",
+                  alt: "screenshot of the evolution simulator that shows the neural network of a creature",
                   src: evolutionSimulation3,
                 },
                 {
-                  alt: "screenshot of the evolution simulation project showing the neural network of a creature",
+                  alt: 'screenshot of the evolution simulator that shows the "Stats" tab which contains a graph of survival rate over time',
                   src: evolutionSimulation4,
                 },
               ]}
@@ -328,38 +330,79 @@ const Home: NextPage = () => {
             </ProjectSection>
 
             <ProjectSection
-              title="This is the title of a project"
-              imageSrc={test02}
-              imageAlt="project 2"
+              title="Aula Virtual de Instrumentación"
               invert={true}
               images={[
                 {
-                  alt: "project 2",
-                  src: test02,
+                  alt: "Vista de la página principal del aula virtual. Muestra un menú de navegación azul arriba y un tablero de control eléctrico abajo",
+                  src: aulaVirtualPrincipal,
+                },
+                {
+                  alt: `Vista de la sección "NOSOTROS" del aula virtual. Muestra un texto indicando los autores del proyecto: Gil Danis, Morales María, Sánchez Richard, y Peña Carlos`,
+                  src: aulaVirtualNosotros,
+                },
+                {
+                  alt: `Vista de la sección "FUNCIONAMIENTO" del aula virtual. Muestra una tabla con los instrumentos presentes en el modulo. Cada fila de la tabla posee una foto del instrumento, una descripción corta, un botón "Leer más" y un botón "Ver"`,
+                  src: aulaVirtualFuncionamiento,
+                },
+                {
+                  alt: `Vista de surge cuando alguien hace clic en el botón "Leer más" de una fila en la sección "Funcionamiento"`,
+                  src: aulaVirtualTanque,
                 },
               ]}
             >
               <p className="font-size-5">
-                Proin orci odio, dapibus a tristique nec, consectetur eu risus.
-                Nunc vitae elit fermentum dui volutpat dapibus. Morbi semper
-                congue placerat. Donec sit amet leo lacus. Maecenas in est eu
-                urna molestie aliquet. Integer id dignissim purus. Sed finibus
-                lectus ligula, a commodo mauris molestie sed. Quisque eu
-                tristique dolor. Aliquam sit amet facilisis nisi, vitae
-                convallis nunc. Pellentesque pellentesque risus ullamcorper enim
-                hendrerit iaculis. Nullam tempor bibendum sem ac eleifend.
-                Mauris imperdiet aliquam mauris, vel fermentum mauris
-                sollicitudin iaculis. Sed sodales a tellus id egestas. Quisque
-                sit amet egestas arcu, nec tincidunt nibh. Fusce eu tellus nec
-                arcu ultricies laoreet. Fusce accumsan condimentum velit, sed
-                hendrerit justo dapibus sed.
+                Este proyecto es una página web creada como aula virtual para
+                los estudiantes de la{" "}
+                <a
+                  href="https://uptvalencia.edu.ve/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  UPTValencia
+                </a>
+                . La pagina muestra un tablero de control funcional y un proceso
+                virtual que permiten realizar una serie de prácticas de
+                laboratorio.
               </p>
+
+              <p className="font-size-5">
+                Esta página es producto de un proyecto universitario para
+                obtener el título de Técnico Superior Universitario en
+                Instrumentación y Control, en la{" "}
+                <a
+                  href="https://uptvalencia.edu.ve/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Universidad Politécnica Territorial de Valencia
+                </a>
+                .
+              </p>
+
+              <div className="btn-group pt-3">
+                <a
+                  href="https://caudal.netlify.app/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn btn-primary btn-icon-right"
+                >
+                  ¡Visitar! <HiCursorClick />
+                </a>
+
+                <a
+                  href="https://github.com/carlo697/modulo-caudal"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn btn-dark btn-icon-right"
+                >
+                  Codigo Fuente <FaGithub />
+                </a>
+              </div>
             </ProjectSection>
 
             <ProjectSection
               title="This is the title of a project"
-              imageSrc={test03}
-              imageAlt="project 3"
               images={[
                 {
                   alt: "project 3",
