@@ -2,7 +2,6 @@ import { FaGithub } from "react-icons/fa";
 import { HiCursorClick } from "react-icons/hi";
 import ProjectSection from "../../components/projects/ProjectSection";
 
-import test03 from "../../public/images/test-03.jpg";
 import motivaMainPage from "../../public/images/motiva-main-page.jpg";
 import motivaPatiensImplantOverview1 from "../../public/images/motiva-patients-implant-overview-1.jpg";
 import motivaPatiensImplantOverview2 from "../../public/images/motiva-patients-implant-overview-2.jpg";
