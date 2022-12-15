@@ -1,3 +1,5 @@
+@import "../../styles/base/grid";
+
 $amount: 10vh;
 $time: 0.5s;
 $function: cubic-bezier(0.65, 0, 0.35, 1);
@@ -20,6 +22,10 @@ $function: cubic-bezier(0.65, 0, 0.35, 1);
 //   }
 // }
 
+.parent {
+  overflow: hidden;
+}
+
 .wrapper {
   position: relative;
   transition: top $time $function, opacity $time $function;
@@ -40,5 +46,38 @@ $function: cubic-bezier(0.65, 0, 0.35, 1);
 .content {
   li {
     margin-bottom: 0.5rem;
+  }
+}
+
+.slider-parent {
+  position: relative;
+  transition: left $time $function, opacity $time $function, top $time $function,
+    opacity $time $function;
+  left: -$amount;
+  top: -$amount;
+
+  :global(.direction-xl-row-reverse) & {
+    left: $amount;
+  }
+
+  .start & {
+    top: 0;
+    left: 0%;
+  }
+
+  .end & {
+    left: -$amount;
+    top: $amount;
+  }
+
+  .end :global(.direction-xl-row-reverse) & {
+    left: $amount;
+  }
+}
+
+@include breakpoint-at(xl) {
+  .text-parallax {
+    position: relative;
+    top: calc((var(--parallax) - 0.5) * 10vh);
   }
 }

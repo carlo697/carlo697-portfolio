@@ -26,7 +26,13 @@ const ProjectSection = ({
   };
 
   return (
-    <div className={classNames("pt-5 pb-5", invert && "background-black")}>
+    <div
+      className={classNames(
+        "pt-5 pb-5",
+        invert && "background-black",
+        styles["parent"]
+      )}
+    >
       <div className="container">
         <ParallaxDiv {...wrapperParallax}>
           <div
@@ -39,12 +45,24 @@ const ProjectSection = ({
               <h2 className="text-center">{title}</h2>
             </div>
 
-            <div className={classNames("col-12 col-xl-6 pb-3 pt-xl-3")}>
-              {/* <Image src={imageSrc} alt={imageAlt} placeholder="blur" /> */}
+            <div
+              className={classNames(
+                "col-12 col-xl-6 pb-3 pb-xl-0 pt-xl-0",
+                styles["slider-parent"]
+              )}
+            >
               <Slider images={images} />
             </div>
 
-            <div className="col-12 col-xl-6 pt-xl-3 display-flex align-items-center">
+            <ParallaxDiv
+              {...{
+                useInternalDiv: true,
+                outerClassName: classNames(
+                  "col-12 col-xl-6 display-flex align-items-center"
+                ),
+                className: styles["text-parallax"],
+              }}
+            >
               <div
                 className={classNames(
                   "font-size-md-5",
@@ -58,7 +76,7 @@ const ProjectSection = ({
 
                 {children}
               </div>
-            </div>
+            </ParallaxDiv>
           </div>
         </ParallaxDiv>
       </div>

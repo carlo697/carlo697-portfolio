@@ -33,6 +33,7 @@ export type ParallaxDivProps = React.HTMLAttributes<HTMLDivElement> & {
   defaultPosition?: number;
   func?: (x: number) => number;
   useInternalDiv?: boolean;
+  outerClassName?: string;
   startClassname?: string;
   endClassname?: string;
 };
@@ -47,6 +48,7 @@ const ParallaxDiv = ({
   defaultPosition = 0,
   func = undefined,
   useInternalDiv = false,
+  outerClassName = "",
   className = "",
   startClassname = "",
   endClassname = "",
@@ -65,7 +67,7 @@ const ParallaxDiv = ({
       const windowHeight = window.innerHeight;
       const windowTop = window.scrollY;
 
-      const divRect = ref.current.getBoundingClientRect()
+      const divRect = ref.current.getBoundingClientRect();
       const divHeight = divRect.height;
       const divTop = divRect.top + windowTop;
       const pivotStart = divTop + divHeight * startPosition;
@@ -119,7 +121,7 @@ const ParallaxDiv = ({
 
   if (useInternalDiv) {
     return (
-      <div ref={ref} style={finalStyle} {...rest}>
+      <div ref={ref} style={finalStyle} {...rest} className={outerClassName}>
         <div className={finalClass}>{children}</div>
       </div>
     );
