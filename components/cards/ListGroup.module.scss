@@ -13,13 +13,18 @@ $highlight-color: rgb(60, 65, 92);
 
 .item {
   flex-grow: 1;
-  padding: 1.5rem 2rem;
-  font-size: 1.1rem;
+  padding: 1.5rem 1rem;
+  font-size: 1rem;
   font-weight: $font-weight-light;
   transition: background-color 0.2s;
   position: relative;
   overflow: hidden;
   z-index: 1;
+
+  @include breakpoint-at(md) {
+    padding: 1.5rem 2rem;
+    font-size: 1.1rem;
+  }
 
   &:not(:last-of-type) {
     border-bottom: 1px solid $border-color;

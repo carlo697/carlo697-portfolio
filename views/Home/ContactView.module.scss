@@ -1,4 +1,5 @@
 @import "../../styles/base/variables";
+@import "../../styles/base/grid";
 
 .contact-list-item {
   display: flex;
@@ -6,13 +7,21 @@
 
   svg {
     font-size: 2rem;
-    margin-right: 2rem;
+    margin-right: 1rem;
+
+    @include breakpoint-at(md) {
+      margin-right: 2rem;
+    }
   }
 
   h3 {
     margin-bottom: 0;
-    font-size: 1.5em;
+    font-size: 1.2em;
     font-weight: $font-weight-medium;
+
+    @include breakpoint-at(md) {
+      font-size: 1.5em;
+    }
   }
 
   a {
