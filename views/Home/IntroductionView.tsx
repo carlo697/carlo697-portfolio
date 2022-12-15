@@ -11,7 +11,7 @@ const IntroductionView = () => {
           <div className="row">
             <div className="col">
               <h1 className="text-center mb-0 pt-2 pt-md-4 font-size-2 font-size-md-1">
-                Mi Portafolio
+                Carlos Peña
               </h1>
             </div>
           </div>
