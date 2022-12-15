@@ -1,3 +1,7 @@
+import { FaGithub } from "react-icons/fa";
+import { HiCursorClick } from "react-icons/hi";
+import ProjectSection from "../../components/projects/ProjectSection";
+
 import test03 from "../../public/images/test-03.jpg";
 import motivaMainPage from "../../public/images/motiva-main-page.jpg";
 import motivaPatiensImplantOverview1 from "../../public/images/motiva-patients-implant-overview-1.jpg";
@@ -11,9 +15,9 @@ import aulaVirtualPrincipal from "../../public/images/aula-virtual-principal.jpg
 import aulaVirtualNosotros from "../../public/images/aula-virtual-nosotros.jpg";
 import aulaVirtualFuncionamiento from "../../public/images/aula-virtual-funcionamiento.jpg";
 import aulaVirtualTanque from "../../public/images/aula-virtual-tanque.jpg";
-import { FaGithub } from "react-icons/fa";
-import { HiCursorClick } from "react-icons/hi";
-import ProjectSection from "../../components/projects/ProjectSection";
+import neatTimerAlarm from "../../public/images/neat-timer-alarm.jpg";
+import neatTimerCountdown from "../../public/images/neat-timer-countdown.jpg";
+import neatTimerStopwatch from "../../public/images/neat-timer-stopwatch.jpg";
 
 const ProjectsView = () => {
   return (
@@ -254,37 +258,55 @@ const ProjectsView = () => {
           </ProjectSection>
 
           <ProjectSection
-            title="This is the title of a project"
+            title="Neat Timer"
             invert={true}
             images={[
               {
-                alt: "project 3",
-                src: test03,
+                alt: "Página “Alarma” de Neat Timer, que constituye la pagina principal del sitio. Muestra un cronometro con dos botones: uno para dividir el tiempo en vueltas y otro para pausar el tiempo.",
+                src: neatTimerStopwatch,
+              },
+              {
+                alt: "Página “Cuenta regresiva” de Neat Timer. Muestra un cronometro de cuenta regresiva con tres botones: editar, reiniciar y pausar.",
+                src: neatTimerCountdown,
+              },
+              {
+                alt: "Página “Alarma” de Neat Timer. Muestra una lista de alarmas configurables. Cada alarma posee un botón con forma de “X” para eliminarlas individualmente.",
+                src: neatTimerAlarm,
               },
             ]}
           >
             <p className="font-size-5">
-              Proin orci odio, dapibus a tristique nec, consectetur eu risus.
-              Nunc vitae elit fermentum dui volutpat dapibus. Morbi semper
-              congue placerat. Donec sit amet leo lacus. Maecenas in est eu urna
-              molestie aliquet. Integer id dignissim purus. Sed finibus lectus
-              ligula, a commodo mauris molestie sed. Quisque eu tristique dolor.
-              Aliquam sit amet facilisis nisi, vitae convallis nunc.
-              Pellentesque pellentesque risus ullamcorper enim hendrerit
-              iaculis. Nullam tempor bibendum sem ac eleifend. Mauris imperdiet
-              aliquam mauris, vel fermentum mauris sollicitudin iaculis. Sed
-              sodales a tellus id egestas. Quisque sit amet egestas arcu, nec
-              tincidunt nibh. Fusce eu tellus nec arcu ultricies laoreet. Fusce
-              accumsan condimentum velit, sed hendrerit justo dapibus sed.
+              Esta aplicación web contiene múltiples herramientas bastante
+              útiles para medir el tiempo. Posee un cronometro, un reloj con la
+              opción de obtener la hora en línea, un temporizador de cuenta
+              regresiva y alarmas personalizables.
             </p>
 
             <p className="font-size-5">
-              Nullam tempor bibendum sem ac eleifend. Mauris imperdiet aliquam
-              mauris, vel fermentum mauris sollicitudin iaculis. Sed sodales a
-              tellus id egestas. Quisque sit amet egestas arcu, nec tincidunt
-              nibh. Fusce eu tellus nec arcu ultricies laoreet. Fusce accumsan
-              condimentum velit, sed hendrerit justo dapibus sed.
+              Tanto el temporizador como las alarmas hacen uso de sonido y
+              notificaciones de navegador para informar al usuario que el tiempo
+              ha acabado.
             </p>
+
+            <div className="btn-group pt-3">
+              <a
+                href="https://neat-timer.netlify.app/"
+                target="_blank"
+                rel="noreferrer"
+                className="btn btn-primary btn-icon-right"
+              >
+                ¡Visitar! <HiCursorClick />
+              </a>
+
+              <a
+                href="https://github.com/carlo697/NeatTimer"
+                target="_blank"
+                rel="noreferrer"
+                className="btn btn-dark btn-icon-right"
+              >
+                Codigo Fuente <FaGithub />
+              </a>
+            </div>
           </ProjectSection>
         </div>
       </section>
