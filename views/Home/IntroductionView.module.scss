@@ -1,0 +1,33 @@
+@import "../../styles/base/variables";
+
+.terrain-section {
+  color: white;
+  background: #151515;
+  background: linear-gradient(
+    180deg,
+    #707b95 5%,
+    #fdae4f 30%,
+    #fdae4f 40%,
+    #ef7141 50%,
+    65%,
+    #151515
+  );
+}
+
+.terrain-section :global(.container) {
+  position: relative;
+  opacity: var(--inverted-parallax);
+  bottom: calc(var(--parallax) * 150px);
+}
+
+.terrain-section :global(.row.position-md-absolute) {
+  bottom: calc(var(--half-parallax) * 150px);
+}
+
+.terrain-canvas-parent {
+  width: 100%;
+  max-height: 85vh;
+  aspect-ratio: 16/10;
+  position: relative;
+  overflow: hidden;
+}
