@@ -13,12 +13,7 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Carlos Peña</title>
-        <meta
-          name="description"
-          content="Soy Carlos Peña, desarrollador web especializado principalmente en el Front-End y este es mi sitio web."
-        />
-        <link rel="icon" href="/favicon.ico" />
+        <title>Portafolio de Carlos Peña</title>
       </Head>
 
       <main className="blue-background">
