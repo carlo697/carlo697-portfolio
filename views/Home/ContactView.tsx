@@ -33,7 +33,9 @@ const ContactView = () => {
                 <GoMailRead />
                 <div>
                   <h3>Mail</h3>
-                  <a href="mailto:test@gmail.com">test@gmail.com</a>
+                  <a href="mailto:carlos.07888@gmail.com">
+                    carlos.07888@gmail.com
+                  </a>
                 </div>
               </ListGroupItem>
               <ListGroupItem className={styles["contact-list-item"]}>
