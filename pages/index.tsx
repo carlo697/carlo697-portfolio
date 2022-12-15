@@ -47,7 +47,7 @@ const Home: NextPage = () => {
 
         <ProjectsView />
 
-        <SimpleDivider useContainer />
+        {/* <SimpleDivider useContainer /> */}
 
         <ContactView />
 

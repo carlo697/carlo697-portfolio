@@ -26,40 +26,42 @@ const ProjectSection = ({
   };
 
   return (
-    <div className="pb-6">
-      <ParallaxDiv {...wrapperParallax}>
-        <div
-          className={classNames(
-            "row gx-xl-2",
-            invert && "direction-xl-row-reverse"
-          )}
-        >
-          <div className={classNames("col col-xl-6 pb-3 pt-xl-3")}>
-            <h2
-              className={classNames(
-                "font-size-3 font-size-md-2",
-                invert ? "text-xl-left" : "text-xl-right"
-              )}
-            >
-              {title}
-            </h2>
-            {/* <Image src={imageSrc} alt={imageAlt} placeholder="blur" /> */}
-            <Slider images={images} />
-          </div>
-
-          <div className="col-xl-1 display-none display-xl-flex justify-content-center">
-            <SimpleDivider direction="vertical" />
-          </div>
-
+    <div className={classNames("pt-5 pb-5", invert && "background-black")}>
+      <div className="container">
+        <ParallaxDiv {...wrapperParallax}>
           <div
             className={classNames(
-              "col-xl-5 pt-xl-3 display-flex align-items-center"
+              "row gx-xl-2",
+              invert && "direction-xl-row-reverse"
             )}
           >
-            <div className={styles["content"]}>{children}</div>
+            <div className="col-12 display-xl-none">
+              <h2 className="text-center">{title}</h2>
+            </div>
+
+            <div className={classNames("col-12 col-xl-6 pb-3 pt-xl-3")}>
+              {/* <Image src={imageSrc} alt={imageAlt} placeholder="blur" /> */}
+              <Slider images={images} />
+            </div>
+
+            <div className="col-12 col-xl-6 pt-xl-3 display-flex align-items-center">
+              <div
+                className={classNames(
+                  "font-size-md-5",
+                  styles["content"],
+                  invert ? "pr-xl-5 " : "pl-xl-5 "
+                )}
+              >
+                <h2 className="display-none display-xl-block font-size-2 text-left">
+                  {title}
+                </h2>
+
+                {children}
+              </div>
+            </div>
           </div>
-        </div>
-      </ParallaxDiv>
+        </ParallaxDiv>
+      </div>
     </div>
   );
 };
