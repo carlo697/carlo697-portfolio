@@ -78,6 +78,6 @@ $function: cubic-bezier(0.65, 0, 0.35, 1);
 @include breakpoint-at(xl) {
   .text-parallax {
     position: relative;
-    top: calc((var(--parallax) - 0.5) * 10vh);
+    top: calc((var(--parallax) - 0.5) * 15vh);
   }
 }

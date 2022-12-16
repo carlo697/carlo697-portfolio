@@ -1,5 +1,7 @@
 import classNames from "classnames";
 import React, { ReactNode } from "react";
+import { FaGithub } from "react-icons/fa";
+import { HiCursorClick } from "react-icons/hi";
 import ParallaxDiv, { ParallaxDivProps } from "../animations/ParallaxDiv";
 import SimpleDivider from "../separators/SimpleDivider";
 import Slider, { SliderProps } from "../sliders/Slider";
@@ -8,6 +10,8 @@ import styles from "./ProjectSection.module.scss";
 type Props = {
   title: ReactNode;
   invert?: boolean;
+  websiteUrl?: string;
+  sourceCodeUrl?: string;
 } & SliderProps;
 
 const ProjectSection = ({
@@ -15,6 +19,8 @@ const ProjectSection = ({
   title,
   invert,
   images,
+  websiteUrl,
+  sourceCodeUrl,
 }: React.PropsWithChildren<Props>) => {
   const wrapperParallax: ParallaxDivProps = {
     viewportStart: 0.8,
@@ -65,16 +71,44 @@ const ProjectSection = ({
             >
               <div
                 className={classNames(
-                  "font-size-md-5",
+                  "font-size-md-5 py-xl-4",
                   styles["content"],
                   invert ? "pr-xl-5 " : "pl-xl-5 "
                 )}
               >
-                <h2 className="display-none display-xl-block font-size-2 text-left">
+                <h2 className="display-none display-xl-block font-size-2 text-left mb-3">
                   {title}
                 </h2>
 
+                <SimpleDivider dividerClassName="mb-3" />
+
                 {children}
+
+                {(websiteUrl || sourceCodeUrl) && (
+                  <div className={classNames("btn-group pt-3 pt-md-4")}>
+                    {websiteUrl && (
+                      <a
+                        href={websiteUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="btn btn-primary btn-icon-right"
+                      >
+                        ¡Visitar! <HiCursorClick />
+                      </a>
+                    )}
+
+                    {sourceCodeUrl && (
+                      <a
+                        href={sourceCodeUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="btn btn-dark btn-icon-right"
+                      >
+                        Código <FaGithub />
+                      </a>
+                    )}
+                  </div>
+                )}
               </div>
             </ParallaxDiv>
           </div>

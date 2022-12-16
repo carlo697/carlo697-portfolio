@@ -34,6 +34,7 @@ const ProjectsView = () => {
 
         <ProjectSection
           title="Motiva"
+          websiteUrl="https://motiva.health/"
           images={[
             {
               alt: "screenshot of the evolution simulator",
@@ -91,22 +92,13 @@ const ProjectsView = () => {
               </li>
             </ul>
           </div>
-
-          <div className="btn-group pt-3">
-            <a
-              href="https://motiva.health/"
-              target="_blank"
-              rel="noreferrer"
-              className="btn btn-primary btn-icon-right"
-            >
-              ¡Visitar! <HiCursorClick />
-            </a>
-          </div>
         </ProjectSection>
 
         <ProjectSection
           title="Simulador de Evolución"
           invert={true}
+          websiteUrl="https://evolution-simulation.netlify.app/"
+          sourceCodeUrl="https://github.com/carlo697/js-biosim"
           images={[
             {
               alt: "screenshot of the evolution simulator",
@@ -164,30 +156,12 @@ const ProjectsView = () => {
             </a>
             .
           </p>
-
-          <div className="btn-group pt-3">
-            <a
-              href="https://evolution-simulation.netlify.app/"
-              target="_blank"
-              rel="noreferrer"
-              className="btn btn-primary btn-icon-right"
-            >
-              ¡Visitar! <HiCursorClick />
-            </a>
-
-            <a
-              href="https://github.com/carlo697/js-biosim"
-              target="_blank"
-              rel="noreferrer"
-              className="btn btn-dark btn-icon-right"
-            >
-              Codigo Fuente <FaGithub />
-            </a>
-          </div>
         </ProjectSection>
 
         <ProjectSection
           title="Aula Virtual de Instrumentación"
+          websiteUrl="https://caudal.netlify.app/"
+          sourceCodeUrl="https://github.com/carlo697/modulo-caudal"
           images={[
             {
               alt: "Vista de la página principal del aula virtual. Muestra un menú de navegación azul arriba y un tablero de control eléctrico abajo",
@@ -234,31 +208,13 @@ const ProjectsView = () => {
             </a>
             .
           </p>
-
-          <div className="btn-group pt-3">
-            <a
-              href="https://caudal.netlify.app/"
-              target="_blank"
-              rel="noreferrer"
-              className="btn btn-primary btn-icon-right"
-            >
-              ¡Visitar! <HiCursorClick />
-            </a>
-
-            <a
-              href="https://github.com/carlo697/modulo-caudal"
-              target="_blank"
-              rel="noreferrer"
-              className="btn btn-dark btn-icon-right"
-            >
-              Codigo Fuente <FaGithub />
-            </a>
-          </div>
         </ProjectSection>
 
         <ProjectSection
           title="Neat Timer"
           invert={true}
+          websiteUrl="https://neat-timer.netlify.app/"
+          sourceCodeUrl="https://github.com/carlo697/NeatTimer"
           images={[
             {
               alt: "Página “Alarma” de Neat Timer, que constituye la pagina principal del sitio. Muestra un cronometro con dos botones: uno para dividir el tiempo en vueltas y otro para pausar el tiempo.",
@@ -286,26 +242,6 @@ const ProjectsView = () => {
             notificaciones de navegador para informar al usuario que el tiempo
             ha acabado.
           </p>
-
-          <div className="btn-group pt-3">
-            <a
-              href="https://neat-timer.netlify.app/"
-              target="_blank"
-              rel="noreferrer"
-              className="btn btn-primary btn-icon-right"
-            >
-              ¡Visitar! <HiCursorClick />
-            </a>
-
-            <a
-              href="https://github.com/carlo697/NeatTimer"
-              target="_blank"
-              rel="noreferrer"
-              className="btn btn-dark btn-icon-right"
-            >
-              Codigo Fuente <FaGithub />
-            </a>
-          </div>
         </ProjectSection>
       </section>
     </>
