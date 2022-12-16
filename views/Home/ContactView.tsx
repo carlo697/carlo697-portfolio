@@ -42,7 +42,11 @@ const ContactView = () => {
                 <FaLinkedin />
                 <div>
                   <h3>Linkedin</h3>
-                  <a href="https://www.linkedin.com/in/carlo697/">
+                  <a
+                    href="https://www.linkedin.com/in/carlo697/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     Carlos Peña
                   </a>
                 </div>
@@ -51,7 +55,13 @@ const ContactView = () => {
                 <FaGithub />
                 <div>
                   <h3>Github</h3>
-                  <a href="https://github.com/carlo697">carlo697</a>
+                  <a
+                    href="https://github.com/carlo697"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    carlo697
+                  </a>
                 </div>
               </ListGroupItem>
             </ListGroup>
