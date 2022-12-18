@@ -53,7 +53,7 @@ const ProjectSection = ({
 
             <div
               className={classNames(
-                "col-12 col-xl-6 pb-3 pb-xl-0 pt-xl-0",
+                "col-12 col-xl-6 pb-3 pb-xl-0 pt-xl-0 display-flex align-items-center",
                 styles["slider-parent"]
               )}
             >
