@@ -6,9 +6,10 @@ $background-color: $dark;
 $highlight-color: rgb(60, 65, 92);
 $border-radius: 5px;
 
-$slideMargin: 5%;
-$slideHiddenWidth: 60%;
-$slideHiddenOpacity: 0.5;
+$slide-shadow-color: rgba(0, 0, 0, 0.15);
+$slide-margin: 5%;
+$slide-hidden-width: 60%;
+$slide-hidden-opacity: 0.5;
 
 .wrapper {
   display: flex;
@@ -29,28 +30,30 @@ $slideHiddenOpacity: 0.5;
 
 .img-wrapper {
   position: absolute;
-  width: calc(100% - ($slideMargin * 2));
+  width: calc(100% - ($slide-margin * 2));
   height: 100%;
   display: flex;
-  left: $slideMargin;
+  left: $slide-margin;
 
   transition: left $time, right $time, width $time, opacity $time;
 }
 
 .slide-active {
   opacity: 1;
+  filter: drop-shadow(5px 0 3px $slide-shadow-color)
+    drop-shadow(-5px 0 3px $slide-shadow-color);
 }
 
 .slide-left {
   left: 0;
-  opacity: $slideHiddenOpacity;
-  width: $slideHiddenWidth;
+  opacity: $slide-hidden-opacity;
+  width: $slide-hidden-width;
 }
 
 .slide-right {
-  left: calc(100% - $slideHiddenWidth);
-  opacity: $slideHiddenOpacity;
-  width: $slideHiddenWidth;
+  left: calc(100% - $slide-hidden-width);
+  opacity: $slide-hidden-opacity;
+  width: $slide-hidden-width;
 }
 
 .second-row {
