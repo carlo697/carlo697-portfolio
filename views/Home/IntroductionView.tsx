@@ -1,7 +1,14 @@
 import classNames from "classnames";
 import styles from "./IntroductionView.module.scss";
-import TerrainCanvas from "../../three/terrain/TerrainCanvas";
 import ParallaxDiv from "../../components/animations/ParallaxDiv";
+import dynamic from "next/dynamic";
+import { Suspense } from "react";
+import Loader from "../../components/Loader";
+
+const TerrainCanvas = dynamic(
+  () => import("../../three/terrain/TerrainCanvas"),
+  { suspense: true }
+);
 
 const IntroductionView = () => {
   return (
@@ -20,13 +27,15 @@ const IntroductionView = () => {
             <div className="row pb-md-6 pb-lg-2">
               <div className="col-12 col-md-10">
                 <div className={styles["terrain-canvas-parent"]}>
-                  <TerrainCanvas
-                    style={{
-                      position: "absolute",
-                      width: "100%",
-                      height: "100%",
-                    }}
-                  />
+                  <Suspense fallback={<Loader />}>
+                    <TerrainCanvas
+                      style={{
+                        position: "absolute",
+                        width: "100%",
+                        height: "100%",
+                      }}
+                    />
+                  </Suspense>
                 </div>
               </div>
             </div>
