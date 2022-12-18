@@ -1,4 +1,5 @@
 @import "../../styles/base/grid";
+@import "../../styles/base/utilities";
 
 $amount: 10vh;
 $time: 0.5s;
@@ -79,5 +80,13 @@ $function: cubic-bezier(0.65, 0, 0.35, 1);
   .text-parallax {
     position: relative;
     top: calc((var(--parallax) - 0.5) * 15vh);
+  }
+}
+
+.button {
+  max-width: fit-content;
+
+  @include breakpoint-at(xl) {
+    max-width: none;
   }
 }

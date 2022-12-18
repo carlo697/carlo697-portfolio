@@ -1,5 +1,5 @@
 import Image, { StaticImageData } from "next/image";
-import React, { useState } from "react";
+import React, { CSSProperties, useState } from "react";
 import styles from "./Slider.module.scss";
 import { BsChevronCompactLeft } from "react-icons/bs";
 import classNames from "classnames";
@@ -39,16 +39,21 @@ const Slider = ({ images }: React.PropsWithoutRef<SliderProps>) => {
               ? styles["slide-right"]
               : styles["slide-active"];
 
+          const style: CSSProperties = {
+            zIndex: index === currentSlide ? 2 : 1,
+            opacity: Math.abs(index - currentSlide) > 1 ? 0 : undefined,
+          };
+
           return (
             <div
               className={classNames(styles["img-wrapper"], className)}
               key={index}
+              style={style}
             >
               <Image
                 src={src}
                 alt={alt}
                 placeholder="blur"
-                className="hola"
                 objectFit="contain"
               />
             </div>

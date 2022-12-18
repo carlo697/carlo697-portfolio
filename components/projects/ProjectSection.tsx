@@ -91,7 +91,10 @@ const ProjectSection = ({
                         href={websiteUrl}
                         target="_blank"
                         rel="noreferrer"
-                        className="btn btn-primary btn-icon-right"
+                        className={classNames(
+                          "btn btn-primary btn-icon-right",
+                          styles["button"]
+                        )}
                       >
                         ¡Visitar! <HiCursorClick />
                       </a>
@@ -102,7 +105,10 @@ const ProjectSection = ({
                         href={sourceCodeUrl}
                         target="_blank"
                         rel="noreferrer"
-                        className="btn btn-dark btn-icon-right"
+                        className={classNames(
+                          "btn btn-dark btn-icon-right",
+                          styles["button"]
+                        )}
                       >
                         Código <FaGithub />
                       </a>
