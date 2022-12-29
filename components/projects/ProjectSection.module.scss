@@ -1,47 +1,8 @@
 @import "../../styles/base/grid";
 @import "../../styles/base/utilities";
 
-$amount: 10vh;
-$time: 0.5s;
-$function: cubic-bezier(0.65, 0, 0.35, 1);
-
-// .parallax {
-//   position: relative;
-//   top: calc(var(--inverted-parallax) * $amount);
-//   opacity: var(--parallax);
-// }
-
-// .parallax {
-//   position: relative;
-//   transition: top $time $function, opacity $time $function;
-//   opacity: 0;
-//   top: $amount;
-
-//   &.start {
-//     opacity: 1;
-//     top: 0;
-//   }
-// }
-
-.parent {
-  overflow: hidden;
-}
-
 .wrapper {
-  position: relative;
-  transition: top $time $function, opacity $time $function;
-  opacity: 0;
-  top: $amount;
-
-  &.start {
-    opacity: 1;
-    top: 0;
-  }
-
-  &.end {
-    opacity: 0;
-    top: -$amount;
-  }
+  overflow: hidden;
 }
 
 .content {
@@ -52,27 +13,27 @@ $function: cubic-bezier(0.65, 0, 0.35, 1);
 
 .slider-parent {
   position: relative;
-  transition: left $time $function, opacity $time $function, top $time $function,
-    opacity $time $function;
-  left: -$amount;
-  top: -$amount;
+  transition: left var(--fade-transition), opacity var(--fade-transition),
+    top var(--fade-transition), opacity var(--fade-transition);
+  left: calc(var(--fade-offset) * -1);
+  top: calc(var(--fade-offset) * -1);
 
   :global(.direction-xl-row-reverse) & {
-    left: $amount;
+    left: var(--fade-offset);
   }
 
-  .start & {
+  :global(.parallax-start) & {
     top: 0;
     left: 0%;
   }
 
-  .end & {
-    left: -$amount;
-    top: $amount;
+  :global(.parallax-end) & {
+    left: calc(var(--fade-offset) * -1);
+    top: var(--fade-offset);
   }
 
-  .end :global(.direction-xl-row-reverse) & {
-    left: $amount;
+  :global(.parallax-end) :global(.direction-xl-row-reverse) & {
+    left: var(--fade-offset);
   }
 }
 

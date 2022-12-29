@@ -2,7 +2,8 @@ import classNames from "classnames";
 import React, { ReactNode } from "react";
 import { FaGithub } from "react-icons/fa";
 import { HiCursorClick } from "react-icons/hi";
-import ParallaxDiv, { ParallaxDivProps } from "../animations/ParallaxDiv";
+import FadeParallax from "../animations/FadeParallax";
+import ParallaxDiv from "../animations/ParallaxDiv";
 import SimpleDivider from "../separators/SimpleDivider";
 import Slider, { SliderProps } from "../sliders/Slider";
 import styles from "./ProjectSection.module.scss";
@@ -22,25 +23,16 @@ const ProjectSection = ({
   websiteUrl,
   sourceCodeUrl,
 }: React.PropsWithChildren<Props>) => {
-  const wrapperParallax: ParallaxDivProps = {
-    viewportStart: 0.8,
-    viewportEnd: 0.2,
-    useInternalDiv: true,
-    className: styles["wrapper"],
-    startClassname: styles["start"],
-    endClassname: styles["end"],
-  };
-
   return (
     <div
       className={classNames(
         "pt-5 pb-5",
         invert && "background-black",
-        styles["parent"]
+        styles["wrapper"]
       )}
     >
       <div className="container">
-        <ParallaxDiv {...wrapperParallax}>
+        <FadeParallax>
           <div
             className={classNames(
               "row gx-xl-2",
@@ -118,7 +110,7 @@ const ProjectSection = ({
               </div>
             </ParallaxDiv>
           </div>
-        </ParallaxDiv>
+        </FadeParallax>
       </div>
     </div>
   );

@@ -1,0 +1,21 @@
+.wrapper {
+  --fade-offset: 10vh;
+  --fade-time: 0.5s;
+  --fade-function: cubic-bezier(0.65, 0, 0.35, 1);
+  --fade-transition: var(--fade-time) var(--fade-function);
+
+  position: relative;
+  transition: top var(--fade-transition), opacity var(--fade-transition);
+  opacity: 0;
+  top: var(--fade-offset);
+
+  &:global(.parallax-start) {
+    opacity: 1;
+    top: 0;
+  }
+
+  &:global(.parallax-end) {
+    opacity: 0;
+    top: calc(var(--fade-offset) * -1);
+  }
+}
