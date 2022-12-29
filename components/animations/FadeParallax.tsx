@@ -5,7 +5,7 @@ import styles from "./FadeParallax.module.scss";
 const FadeParallax = ({ children }: React.PropsWithChildren) => {
   return (
     <ParallaxDiv
-      viewportStart={0.8}
+      viewportStart={0.75}
       viewportEnd={0.2}
       useInternalDiv={true}
       className={styles["wrapper"]}
